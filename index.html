@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+landing_page_html = '''<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinKinetics | Neuroadaptive Resilience Systems</title>
-    <meta name="description" content="KinKinetics develops intelligent, AI-driven neuroadaptive systems for human resilience in space, healthcare, and challenging environments.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="kinkinetics2.png">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,6 +24,26 @@
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
                         display: ['Space Grotesk', 'Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 20s linear infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'ripple': 'ripple 3s linear infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { filter: 'drop-shadow(0 0 20px rgba(212, 175, 55, 0.4))' },
+                            '50%': { filter: 'drop-shadow(0 0 40px rgba(212, 175, 55, 0.8))' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        ripple: {
+                            '0%': { transform: 'scale(1)', opacity: '0.4' },
+                            '100%': { transform: 'scale(1.5)', opacity: '0' },
+                        }
                     }
                 }
             }
@@ -36,225 +51,237 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --kk-blue: #000083;
-            --kk-light: #1a1a9c;
-            --mustard: #D4AF37;
-            --mustard-light: #E5C100;
-            --bg-dark: #0a0a1a;
-            --bg-card: #0f0f2e;
-        }
-        
         body {
-            background-color: var(--bg-dark);
+            background-color: #000;
             color: #e2e8f0;
             font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
         }
         
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Space Grotesk', sans-serif;
         }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #D4AF37 0%, #E5C100 50%, #fff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .glass-card {
-            background: rgba(15, 15, 46, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-        }
-        
-        .glow-border {
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
-        }
-        
-        .neural-bg {
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(0, 0, 131, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-        }
-        
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Rotating logo animation */
-        .rotating-logo {
+
+        /* Animated gradient ring */
+        .gradient-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(0, 0, 131, 0.3)) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
             animation: rotate 20s linear infinite;
         }
-        
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        
-        /* Slow pulse glow effect for logo */
-        .logo-glow {
-            animation: logoPulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes logoPulse {
-            0%, 100% { 
-                filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-            }
-            50% { 
-                filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
-            }
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--kk-blue);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--mustard);
-        }
-        
-        .blog-card {
-            transition: all 0.3s ease;
-        }
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 0, 131, 0.3);
-        }
 
-        /* Landing page specific styles */
-        .landing-section {
-            background: #000;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .moon-container {
+        /* Particle effect */
+        .particle {
             position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 300px;
-            z-index: 1;
+            width: 2px;
+            height: 2px;
+            background: rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+            animation: float-particle 10s infinite;
         }
 
-        .moon-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.1));
+        @keyframes float-particle {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
         }
 
-        .landing-content {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding-top: 200px;
+        /* Glass effect for nav */
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        .scroll-indicator {
+        /* Glow text effect */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Circular decorative elements */
+        .orbit-ring {
             position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            z-index: 20;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+            animation: rotate 30s linear infinite;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
+        .orbit-ring:nth-child(2) {
+            animation-direction: reverse;
+            animation-duration: 25s;
         }
 
-        .stars {
+        .orbit-ring:nth-child(3) {
+            animation-duration: 35s;
+        }
+
+        /* Dots on orbit */
+        .orbit-dot {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.3), transparent),
-                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.2), transparent),
-                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.3), transparent),
-                radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.2), transparent),
-                radial-gradient(1px 1px at 230px 80px, rgba(255,255,255,0.3), transparent),
-                radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.2), transparent),
-                radial-gradient(1px 1px at 400px 60px, rgba(255,255,255,0.3), transparent),
-                radial-gradient(2px 2px at 500px 100px, rgba(255,255,255,0.2), transparent),
-                radial-gradient(1px 1px at 600px 180px, rgba(255,255,255,0.3), transparent),
-                radial-gradient(2px 2px at 700px 40px, rgba(255,255,255,0.2), transparent),
-                radial-gradient(1px 1px at 800px 120px, rgba(255,255,255,0.3), transparent),
-                radial-gradient(2px 2px at 900px 80px, rgba(255,255,255,0.2), transparent);
-            background-repeat: repeat;
-            background-size: 1000px 1000px;
-            opacity: 0.6;
-            z-index: 0;
+            width: 6px;
+            height: 6px;
+            background: #D4AF37;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #D4AF37;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-mustard-500 selection:text-kk-blue">
+<body>
 
-    <!-- LANDING PAGE SECTION - Minimal Black with Moon -->
-    <section class="landing-section" id="home">
-        <!-- Subtle stars background -->
-        <div class="stars"></div>
+    <!-- Navigation - Always Visible -->
+    <nav class="fixed w-full z-50 top-0 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 relative">
+                        <img src="kinkinetics2.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-white tracking-tight font-display">KinKinetics</span>
+                        <span class="text-[10px] text-mustard-400 uppercase tracking-widest">Neuroadaptive Systems</span>
+                    </div>
+                </a>
 
-        <!-- Content -->
-        <div class="landing-content">
-            <!-- Logo -->
-            <div class="mb-6 logo-glow">
-                <img src="kinkinetics2.png" alt="KinKinetics" class="w-13 h-13 object-contain rotating-logo mx-auto">
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">About</a>
+                    <a href="#services" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Services</a>
+                    <a href="#research" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Research</a>
+                    <a href="#blogs" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Blog</a>
+                    <a href="#contact" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Contact</a>
+                    <a href="mailto:info@kinkinetics.com" class="px-5 py-2.5 bg-mustard-500 hover:bg-mustard-400 text-kk-blue font-semibold text-sm rounded-lg transition-all duration-300 shadow-lg shadow-mustard-500/20">
+                        Get in Touch
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/5">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#about" class="block text-slate-300 hover:text-mustard-400 py-2">About</a>
+                <a href="#services" class="block text-slate-300 hover:text-mustard-400 py-2">Services</a>
+                <a href="#research" class="block text-slate-300 hover:text-mustard-400 py-2">Research</a>
+                <a href="#blogs" class="block text-slate-300 hover:text-mustard-400 py-2">Blog</a>
+                <a href="#contact" class="block text-slate-300 hover:text-mustard-400 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LANDING PAGE SECTION - Creative Circular Design -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
+        
+        <!-- Animated Particles -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 4.5s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
+        </div>
+
+        <!-- Orbital Rings -->
+        <div class="absolute w-[500px] h-[500px] md:w-[600px] md:h-[600px] flex items-center justify-center">
+            <!-- Outer ring -->
+            <div class="orbit-ring w-full h-full">
+                <div class="orbit-dot" style="top: 0; left: 50%; transform: translateX(-50%);"></div>
+                <div class="orbit-dot" style="bottom: 0; left: 50%; transform: translateX(-50%);"></div>
+                <div class="orbit-dot" style="left: 0; top: 50%; transform: translateY(-50%);"></div>
+                <div class="orbit-dot" style="right: 0; top: 50%; transform: translateY(-50%);"></div>
             </div>
             
-            <!-- Brand Name -->
-            <h1 class="text-4xl md:text-5xl font-bold text-white tracking-wider mb-2 font-display">
-                KinKinetics
+            <!-- Middle ring -->
+            <div class="orbit-ring w-[400px] h-[400px] md:w-[480px] md:h-[480px]">
+                <div class="orbit-dot" style="top: 0; left: 50%; transform: translateX(-50%);"></div>
+                <div class="orbit-dot" style="bottom: 0; left: 50%; transform: translateX(-50%);"></div>
+            </div>
+            
+            <!-- Inner ring -->
+            <div class="orbit-ring w-[300px] h-[300px] md:w-[360px] md:h-[360px]">
+                <div class="orbit-dot" style="left: 0; top: 50%; transform: translateY(-50%);"></div>
+                <div class="orbit-dot" style="right: 0; top: 50%; transform: translateY(-50%);"></div>
+            </div>
+        </div>
+
+        <!-- Central Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+            
+            <!-- Large Logo with Glow -->
+            <div class="relative mb-8 animate-float">
+                <!-- Glow effect behind logo -->
+                <div class="absolute inset-0 bg-mustard-500/20 rounded-full blur-3xl scale-150"></div>
+                
+                <!-- Logo container -->
+                <div class="relative w-48 h-48 md:w-64 md:h-64 animate-pulse-glow">
+                    <img src="kinkinetics2.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
+                </div>
+                
+                <!-- Gradient ring around logo -->
+                <div class="absolute inset-0 gradient-ring rounded-full scale-110"></div>
+            </div>
+            
+            <!-- Welcome Text -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-wider font-display glow-text">
+                WELCOME TO
             </h1>
             
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-mustard-400 mb-6 tracking-widest font-display">
+                KINKINETICS
+            </h2>
+            
+            <!-- Decorative line -->
+            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-mustard-500 to-transparent mb-6"></div>
+            
             <!-- Tagline -->
-            <p class="text-mustard-400 text-sm tracking-[0.3em] uppercase mb-8">
-                Neuroadaptive Systems
-            </p
+            <p class="text-slate-300 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
+                Where Emotional Support Meets<br>Intelligent Decision-Making
+            </p>
             
             <!-- CTA Button -->
             <a href="#about" 
-               class="px-8 py-3 bg-kk-blue hover:bg-kk-light text-white font-semibold rounded-full transition-all duration-300 border border-white/10 hover:border-mustard-400/50 shadow-lg hover:shadow-mustard-500/20">
-                FIND OUT MORE
+               class="group relative px-10 py-4 bg-transparent border-2 border-mustard-500 text-mustard-400 font-semibold rounded-full transition-all duration-300 hover:bg-mustard-500 hover:text-kk-blue overflow-hidden">
+                <span class="relative z-10">FIND OUT MORE</span>
+                <!-- Hover ripple effect -->
+                <div class="absolute inset-0 bg-mustard-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
             </a>
         </div>
 
-        <!-- Scroll Down Indicator -->
-        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
             <svg class="w-6 h-6 text-mustard-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
             </svg>
