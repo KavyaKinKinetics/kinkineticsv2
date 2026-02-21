@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinKinetics</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="kinkinetics.png">
+    <link rel="icon" type="image/png" href="kinkinetics2.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,7 +31,6 @@
                         'spin-slow': 'spin 20s linear infinite',
                         'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
                         'float': 'float 6s ease-in-out infinite',
-                        'ripple': 'ripple 3s linear infinite',
                     },
                     keyframes: {
                         pulseGlow: {
@@ -40,11 +39,7 @@
                         },
                         float: {
                             '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        ripple: {
-                            '0%': { transform: 'scale(1)', opacity: '0.4' },
-                            '100%': { transform: 'scale(1.5)', opacity: '0' },
+                            '50%': { transform: 'translateY(-15px)' },
                         }
                     }
                 }
@@ -65,22 +60,27 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
-        /* Animated gradient ring */
-        .gradient-ring {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid transparent;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(0, 0, 131, 0.3)) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            animation: rotate 20s linear infinite;
+        /* Glass effect for nav */
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        /* Glow text effect */
+        .glow-text {
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Glass card effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glow-border {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
         }
 
         /* Particle effect */
@@ -88,9 +88,9 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: rgba(212, 175, 55, 0.6);
+            background: rgba(212, 175, 55, 0.5);
             border-radius: 50%;
-            animation: float-particle 10s infinite;
+            animation: float-particle 12s infinite;
         }
 
         @keyframes float-particle {
@@ -105,50 +105,34 @@
                 opacity: 1;
             }
             100% {
-                transform: translateY(-100vh) translateX(50px);
+                transform: translateY(-100vh) translateX(30px);
                 opacity: 0;
             }
         }
 
-        /* Glass effect for nav */
-        .glass-nav {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
 
-        /* Glow text effect */
-        .glow-text {
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5), 0 0 40px rgba(212, 175, 55, 0.3);
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Circular decorative elements */
-        .orbit-ring {
-            position: absolute;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 50%;
-            animation: rotate 30s linear infinite;
+        /* Blog card hover */
+        .blog-card {
+            transition: all 0.3s ease;
         }
 
-        .orbit-ring:nth-child(2) {
-            animation-direction: reverse;
-            animation-duration: 25s;
-        }
-
-        .orbit-ring:nth-child(3) {
-            animation-duration: 35s;
-        }
-
-        /* Dots on orbit */
-        .orbit-dot {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: #D4AF37;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #D4AF37;
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
     </style>
+<base target="_blank">
 </head>
 <body>
 
@@ -159,7 +143,7 @@
                 <!-- Logo -->
                 <a href="#home" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 relative">
-                        <img src="kinkinetics2.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
+                        <img src="kinkinetics.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
                     </div>
                     <div class="flex flex-col">
                         <span class="text-xl font-bold text-white tracking-tight font-display">KinKinetics</span>
@@ -200,86 +184,44 @@
         </div>
     </nav>
 
-    <!-- LANDING PAGE SECTION - Creative Circular Design -->
+    <!-- LANDING PAGE SECTION - Clean Centered Design -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
         
         <!-- Animated Particles -->
         <div class="absolute inset-0 pointer-events-none">
             <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
-            <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
-            <div class="particle" style="left: 40%; animation-delay: 1s;"></div>
-            <div class="particle" style="left: 50%; animation-delay: 3s;"></div>
-            <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
-            <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
-            <div class="particle" style="left: 80%; animation-delay: 4.5s;"></div>
-            <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
+            <div class="particle" style="left: 25%; animation-delay: 3s;"></div>
+            <div class="particle" style="left: 40%; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 55%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 70%; animation-delay: 5s;"></div>
+            <div class="particle" style="left: 85%; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 15%; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 7s;"></div>
         </div>
 
-        <!-- Orbital Rings -->
-        <div class="absolute w-[500px] h-[500px] md:w-[600px] md:h-[600px] flex items-center justify-center">
-            <!-- Outer ring -->
-            <div class="orbit-ring w-full h-full">
-                <div class="orbit-dot" style="top: 0; left: 50%; transform: translateX(-50%);"></div>
-                <div class="orbit-dot" style="bottom: 0; left: 50%; transform: translateX(-50%);"></div>
-                <div class="orbit-dot" style="left: 0; top: 50%; transform: translateY(-50%);"></div>
-                <div class="orbit-dot" style="right: 0; top: 50%; transform: translateY(-50%);"></div>
-            </div>
+        <!-- Central Content - Logo Left, Text Right -->
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-4">
             
-            <!-- Middle ring -->
-            <div class="orbit-ring w-[400px] h-[400px] md:w-[480px] md:h-[480px]">
-                <div class="orbit-dot" style="top: 0; left: 50%; transform: translateX(-50%);"></div>
-                <div class="orbit-dot" style="bottom: 0; left: 50%; transform: translateX(-50%);"></div>
-            </div>
-            
-            <!-- Inner ring -->
-            <div class="orbit-ring w-[300px] h-[300px] md:w-[360px] md:h-[360px]">
-                <div class="orbit-dot" style="left: 0; top: 50%; transform: translateY(-50%);"></div>
-                <div class="orbit-dot" style="right: 0; top: 50%; transform: translateY(-50%);"></div>
-            </div>
-        </div>
-
-        <!-- Central Content -->
-        <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
-            
-            <!-- Large Logo with Glow -->
-            <div class="relative mb-8 animate-float">
+            <!-- Logo -->
+            <div class="relative animate-float">
                 <!-- Glow effect behind logo -->
-                <div class="absolute inset-0 bg-mustard-500/20 rounded-full blur-3xl scale-150"></div>
+                <div class="absolute inset-0 bg-mustard-500/15 rounded-full blur-3xl scale-125"></div>
                 
                 <!-- Logo container -->
-                <div class="relative w-48 h-48 md:w-64 md:h-64 animate-pulse-glow">
-                    <img src="kinkinetics2.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
+                <div class="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 animate-pulse-glow">
+                    <img src="kinkinetics.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
                 </div>
-                
-                <!-- Gradient ring around logo -->
-                <div class="absolute inset-0 gradient-ring rounded-full scale-110"></div>
             </div>
             
-            <!-- Welcome Text -->
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-wider font-display glow-text">
-                WELCOME TO
-            </h1>
-            
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold text-mustard-400 mb-6 tracking-widest font-display">
-                KINKINETICS
-            </h2>
-            
-            <!-- Decorative line -->
-            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-mustard-500 to-transparent mb-6"></div>
-            
-            <!-- Tagline -->
-            <p class="text-slate-300 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
-                Where Emotional Support Meets<br>Intelligent Decision-Making
-            </p>
-            
-            <!-- CTA Button -->
-            <a href="#about" 
-               class="group relative px-10 py-4 bg-transparent border-2 border-mustard-500 text-mustard-400 font-semibold rounded-full transition-all duration-300 hover:bg-mustard-500 hover:text-kk-blue overflow-hidden">
-                <span class="relative z-10">FIND OUT MORE</span>
-                <!-- Hover ripple effect -->
-                <div class="absolute inset-0 bg-mustard-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-            </a>
+            <!-- Company Name -->
+            <div class="flex flex-col items-center md:items-start">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-wider font-display glow-text">
+                    KINKINETICS
+                </h1>
+                <p class="text-mustard-400 text-lg md:text-xl mt-4 tracking-widest uppercase">
+                    Neuroadaptive Systems
+                </p>
+            </div>
         </div>
 
         <!-- Scroll indicator -->
@@ -290,56 +232,8 @@
         </div>
     </section>
 
-    <!-- Navigation - Appears after scrolling past landing -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-white/5 bg-kk-blue/90 backdrop-blur-md opacity-0 pointer-events-none" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo with rotating animation -->
-                <a href="#home" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 relative logo-glow">
-                        <img src="kinkinetics2.png" alt="KinKinetics" class="w-full h-full object-contain rotating-logo">
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-2xl font-bold text-white tracking-tight font-display">KinKinetics</span>
-                        <span class="text-[10px] text-mustard-400 uppercase tracking-widest">Neuroadaptive Systems</span>
-                    </div>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#about" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">About</a>
-                    <a href="#services" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Services</a>
-                    <a href="#research" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Research</a>
-                    <a href="#blogs" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Blog</a>
-                    <a href="#contact" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Contact</a>
-                    <a href="mailto:info@kinkinetics.com" class="px-5 py-2.5 bg-mustard-500 hover:bg-mustard-400 text-kk-blue font-semibold text-sm rounded-lg transition-all duration-300 shadow-lg shadow-mustard-500/20">
-                        Get in Touch
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <button class="md:hidden text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-white/5">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#about" class="block text-slate-300 hover:text-mustard-400 py-2">About</a>
-                <a href="#services" class="block text-slate-300 hover:text-mustard-400 py-2">Services</a>
-                <a href="#research" class="block text-slate-300 hover:text-mustard-400 py-2">Research</a>
-                <a href="#blogs" class="block text-slate-300 hover:text-mustard-400 py-2">Blog</a>
-                <a href="#contact" class="block text-slate-300 hover:text-mustard-400 py-2">Contact</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- About Section -->
-    <section id="about" class="py-24 relative bg-kk-blue/5">
+    <section id="about" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-start">
                 <div class="reveal">
@@ -356,9 +250,9 @@
 
                     <div class="mt-8 flex items-center gap-4">
                         <div class="flex -space-x-2">
-                            <div class="w-10 h-10 rounded-full bg-kk-blue border-2 border-bg-dark flex items-center justify-center text-mustard-400 text-xs font-bold">Space</div>
-                            <div class="w-10 h-10 rounded-full bg-kk-light border-2 border-bg-dark flex items-center justify-center text-mustard-400 text-xs font-bold">Health</div>
-                            <div class="w-10 h-10 rounded-full bg-mustard-600 border-2 border-bg-dark flex items-center justify-center text-kk-blue text-xs font-bold">Neuro</div>
+                            <div class="w-10 h-10 rounded-full bg-kk-blue border-2 border-black flex items-center justify-center text-mustard-400 text-xs font-bold">Space</div>
+                            <div class="w-10 h-10 rounded-full bg-kk-light border-2 border-black flex items-center justify-center text-mustard-400 text-xs font-bold">Health</div>
+                            <div class="w-10 h-10 rounded-full bg-mustard-600 border-2 border-black flex items-center justify-center text-kk-blue text-xs font-bold">Neuro</div>
                         </div>
                         <span class="text-sm text-slate-400">Multi-domain expertise</span>
                     </div>
@@ -412,7 +306,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 relative">
+    <section id="services" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4">Our Services</h2>
@@ -516,7 +410,7 @@
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="py-24 relative bg-kk-blue/5">
+    <section id="research" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="reveal">
@@ -553,6 +447,16 @@
                                 <p class="text-slate-400 text-sm">Supporting mental health in isolated and confined environments</p>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- Link to Research Posts -->
+                    <div class="mt-8">
+                        <a href="research/" class="inline-flex items-center gap-2 px-6 py-3 bg-mustard-500 hover:bg-mustard-400 text-kk-blue font-semibold rounded-lg transition-all">
+                            View All Research
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
@@ -606,7 +510,7 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blogs" class="py-24 relative">
+    <section id="blogs" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4">Latest Insights</h2>
@@ -615,10 +519,11 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center">
-                        <div class="w-20 h-20 opacity-30 rotating-logo">
-                            <img src="kinkinetics2.png" alt="" class="w-full h-full object-contain">
+                        <div class="w-20 h-20 opacity-30 animate-spin-slow">
+                            <img src="kinkinetics.png" alt="" class="w-full h-full object-contain">
                         </div>
                     </div>
                     <div class="p-6">
@@ -627,19 +532,20 @@
                             <span class="text-slate-600">•</span>
                             <span class="text-xs text-slate-500">Jan 15, 2024</span>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">The Future of hormonal intervention in Space Medicine</h4>
+                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">The Future of Hormonal Intervention in Space Medicine</h4>
                         <p class="text-slate-400 text-sm mb-4">Exploring how hormonal interventions can support crew cohesion and mental health during long-duration space missions.</p>
-                        <a href="#" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                        <a href="blog/post1.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
                             Read More 
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
 
+                <!-- Blog Post 2 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 100ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-light to-kk-blue flex items-center justify-center">
-                        <div class="w-20 h-20 opacity-30 rotating-logo" style="animation-direction: reverse;">
-                            <img src="kinkinetics2.png" alt="" class="w-full h-full object-contain">
+                        <div class="w-20 h-20 opacity-30 animate-spin-slow" style="animation-direction: reverse;">
+                            <img src="kinkinetics.png" alt="" class="w-full h-full object-contain">
                         </div>
                     </div>
                     <div class="p-6">
@@ -650,17 +556,18 @@
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">AI-Driven Emotional Support for Elderly Care</h4>
                         <p class="text-slate-400 text-sm mb-4">How machine learning algorithms can detect loneliness and provide timely interventions for aging populations.</p>
-                        <a href="#" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                        <a href="blog/post2.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
                             Read More 
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
 
+                <!-- Blog Post 3 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-dark flex items-center justify-center">
-                        <div class="w-20 h-20 opacity-30 rotating-logo">
-                            <img src="kinkinetics2.png" alt="" class="w-full h-full object-contain">
+                        <div class="w-20 h-20 opacity-30 animate-spin-slow">
+                            <img src="kinkinetics.png" alt="" class="w-full h-full object-contain">
                         </div>
                     </div>
                     <div class="p-6">
@@ -671,7 +578,7 @@
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Nerve Stimulation in Isolation Environments</h4>
                         <p class="text-slate-400 text-sm mb-4">New findings on how nerve stimulations can regulate stress responses in confined and isolated environments like space habitats.</p>
-                        <a href="#" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                        <a href="blog/post3.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
                             Read More 
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
@@ -680,7 +587,7 @@
             </div>
 
             <div class="text-center mt-12 reveal">
-                <a href="#" class="inline-flex items-center gap-2 px-6 py-3 border border-mustard-500/50 hover:border-mustard-400 text-mustard-400 font-medium rounded-lg transition-all hover:bg-mustard-500/10">
+                <a href="blog/" class="inline-flex items-center gap-2 px-6 py-3 border border-mustard-500/50 hover:border-mustard-400 text-mustard-400 font-medium rounded-lg transition-all hover:bg-mustard-500/10">
                     View All Articles
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
@@ -689,7 +596,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 relative overflow-hidden bg-kk-blue/5">
+    <section id="contact" class="py-24 relative overflow-hidden bg-black">
         <div class="absolute inset-0 bg-gradient-to-t from-kk-blue/10 to-transparent"></div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4 reveal">Get in Touch</h2>
@@ -709,13 +616,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-kk-blue/20 py-12">
+    <footer class="border-t border-white/5 bg-black py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-2">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 relative logo-glow">
-                            <img src="kinkinetics2.png" alt="KinKinetics" class="w-full h-full object-contain rotating-logo">
+                        <div class="w-10 h-10 relative">
+                            <img src="kinkinetics.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
                         </div>
                         <span class="text-xl font-bold text-white font-display">KinKinetics</span>
                     </div>
@@ -753,20 +660,7 @@
     </footer>
 
     <script>
-        const navbar = document.getElementById('navbar');
-        const landingSection = document.getElementById('home');
-        
-        window.addEventListener('scroll', () => {
-            // Show navbar after scrolling past landing section
-            if (window.scrollY > window.innerHeight - 100) {
-                navbar.classList.remove('opacity-0', 'pointer-events-none');
-                navbar.classList.add('bg-kk-blue/95', 'shadow-lg');
-            } else {
-                navbar.classList.add('opacity-0', 'pointer-events-none');
-                navbar.classList.remove('bg-kk-blue/95', 'shadow-lg');
-            }
-        });
-
+        // Scroll reveal animation
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -788,4 +682,3 @@
     </script>
 </body>
 </html>
-
