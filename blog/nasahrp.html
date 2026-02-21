@@ -1,124 +1,231 @@
 ---
 layout: page
-title: KinKinetics at NASA HRP 2025
+title: KinKinetics at NASA HRP 2024 - A Milestone in Space Research
 ---
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8f9fa;
-        color: #333;
-    }
-
-    h2 {
-        font-family: "Arial", sans-serif;
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #0056b3; /* Dark blue for the title */
-        margin-top: 20px;
-    }
-
-    p {
-        font-family: "Arial", sans-serif;
-        font-size: 1rem;
+    .blog-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #e2e8f0;
         line-height: 1.8;
-        text-align: justify; /* Justified text for consistency */
-        margin: 20px auto;
-        max-width: 800px; /* Restrict content width */
     }
 
-    .container {
+    .blog-header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .blog-title {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .blog-subtitle {
+        font-size: 1.25rem;
+        color: #94a3b8;
+        font-weight: 500;
+    }
+
+    .blog-meta {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 25px;
+        font-size: 0.9rem;
+        color: #64748b;
+    }
+
+    .blog-meta span {
+        display: flex;
         align-items: center;
-        padding: 20px;
+        gap: 6px;
     }
 
-    img {
-        margin: 20px auto;
-        border-radius: 8px;
+    .blog-content p {
+        font-size: 1.125rem;
+        margin-bottom: 28px;
+        color: #cbd5e1;
+        text-align: left;
+    }
+
+    .blog-content strong {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    .lead-paragraph {
+        font-size: 1.35rem !important;
+        color: #f1f5f9 !important;
+        font-weight: 500;
+        border-left: 4px solid #fbbf24;
+        padding-left: 24px;
+        margin: 40px 0;
+    }
+
+    .image-container {
+        margin: 50px 0;
+        position: relative;
+    }
+
+    .blog-image {
         width: 100%;
-        max-width: 800px; /* Ensure images align with text width */
-        height: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for modern look */
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .text-muted {
-        font-weight: bold; /* Bold subtitle */
-        color: #6c757d; /* Subtle gray for subtitle */
+    .blog-image:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-caption {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-top: 15px;
+        font-style: italic;
+    }
+
+    .highlight-box {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.3);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 40px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .highlight-box::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 6rem;
+        color: rgba(59, 130, 246, 0.2);
+        font-family: Georgia, serif;
+        line-height: 1;
+    }
+
+    .cta-section {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin-top: 60px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-section h3 {
+        font-size: 1.75rem;
+        color: #fbbf24;
+        margin-bottom: 15px;
+    }
+
+    .cta-section p {
+        color: #94a3b8;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .blog-title {
+            font-size: 2rem;
+        }
+        
+        .blog-content p {
+            font-size: 1rem;
+        }
+        
+        .lead-paragraph {
+            font-size: 1.15rem !important;
+        }
     }
 </style>
 
-<section id="project-details">
-    <div class="container">
-        <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>KinKinetics at NASA HRP 2024</h2>
-                <p class="text-muted">A Remarkable Experience in Advancing Space Research</p>
-            </div>
+<div class="blog-container">
+    <!-- Header -->
+    <header class="blog-header">
+        <h1 class="blog-title">KinKinetics at NASA HRP 2024</h1>
+        <p class="blog-subtitle">A Remarkable Experience in Advancing Space Research</p>
+        <div class="blog-meta">
+            <span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                February 2024
+            </span>
+            <span>•</span>
+            <span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                NASA Human Research Program
+            </span>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <article class="blog-content">
+        <p class="lead-paragraph">
+            The <strong>NASA Human Research Program (HRP) Conference 2024</strong> brought together the brightest minds in space research, and KinKinetics was honored to be part of this extraordinary gathering. Presenting our poster at this prestigious event marked a pivotal milestone in our journey to support human adaptation in extreme environments.
+        </p>
+
+        <div class="image-container">
+            <img src="{{ site.baseurl }}/img/portfolio/nasa01.jpg" alt="NASA HRP Conference 2024" class="blog-image">
+            <p class="image-caption">Presenting KinKinetics at the NASA HRP Conference 2024</p>
         </div>
 
-        <!-- First Image and Description -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <img src="{{ site.baseurl }}/img/portfolio/nasa01.jpg" alt="Space Expo at Farnborough">
-                <p>
-                  The <strong>NASA Human Research Program (HRP) Conference 2024</strong> was an extraordinary gathering of some of the most brilliant minds in space research, and KinKinetics was honored to be a part of it. Presenting our poster at this prestigious event was not just a milestone for our journey but also a moment of validation for the work we’ve been doing to support human adaptation and well-being in extreme environments.                </p>
-                <img src="{{ site.baseurl }}/img/portfolio/nasa02.jpg" alt="Emotional Intelligence and Age">
-              <p>               
-                  The HRP conference brought together experts from diverse backgrounds, all dedicated to addressing the physiological and psychological challenges of long-duration spaceflight. Walking through the halls of groundbreaking research and innovation, we had the opportunity to interact with leading scientists, astronauts, engineers, and decision-makers in the space industry.                
-              </p>
-                <p>
-                  One of the most rewarding aspects of the event was engaging in deep discussions about <strong> human factors in space exploration, decision-making under stress, and the integration of neuroeconomics into astronaut support systems</strong>—the very foundation of KinKinetics.                
-                </p>
-              <p>
-                Our KinKinetics poster was among the exhibits that garnered significant attention. The concept of <strong>neuroeconomic-based decision support for long-duration missions</strong> resonated with many attendees, sparking insightful discussions on the practical applications of our technology.
-              </p>
-              <p>
-                We received invaluable feedback from researchers and industry experts, further refining our approach to <strong>integrating physiological and behavioral insights into real-time decision-making tools</strong> for space travelers. The enthusiasm and curiosity surrounding our work reinforced its importance and potential impact.
-              </p>
-              
+        <p>
+            Walking through the halls of groundbreaking research, we engaged with leading scientists, astronauts, engineers, and decision-makers dedicated to addressing the physiological and psychological challenges of long-duration spaceflight. The atmosphere buzzed with innovation and collaboration.
+        </p>
+
+        <p>
+            One of the most rewarding aspects was diving deep into conversations about <strong>human factors in space exploration, decision-making under stress, and the integration of neuroeconomics into astronaut support systems</strong>—the very foundation of KinKinetics.
+        </p>
+
+        <div class="image-container">
+            <img src="{{ site.baseurl }}/img/portfolio/nasa02.jpg" alt="Research Discussions" class="blog-image">
+            <p class="image-caption">Engaging with researchers on neuroeconomic applications in space</p>
         </div>
 
-        <!-- Second Image and Description 
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <img src="{{ site.baseurl }}/img/portfolio/imagelogo.png" alt="Discussions with Meganne Christian" style="max-width: 40%; height: auto;">
-                <p>
-                    Another significant moment was engaging with <strong>reserve astronaut Meganne Christian</strong>. Our discussions delved into the importance of fostering emotional resilience and behavioral adaptability in extreme environments. Her perspective highlighted the role of empathy and psychological preparedness in ensuring mission success, further emphasizing the need for advanced emotional intelligence tools.
-                </p>
-            </div>
-        </div> -->
-
-        <!-- Third Image and Description -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-            <img src="{{ site.baseurl }}/img/portfolio/nasa03.jpg" alt="KinKinetics and Emotional Intelligence">
-                <p>
-                  Perhaps the most inspiring part of the conference was the chance to connect with visionaries and pioneers in human spaceflight research. From pre-award research managers to astronauts and behavioral scientists, each conversation opened doors to new ideas and potential collaborations.                
-                </p>
-              <p>
-                A special highlight was discussing the possibilities of <strong>funding support, research partnerships, and opportunities to take KinKinetics</strong> to the next stage. We are excited about the future and grateful for the connections made during this event.
-              </p>
-              
-            </div>
+        <div class="highlight-box">
+            <p style="margin: 0; font-style: italic; font-size: 1.1rem;">
+                Our poster on <strong>neuroeconomic-based decision support for long-duration missions</strong> resonated deeply with attendees, sparking insightful discussions on practical applications and future collaborations.
+            </p>
         </div>
 
-        <!-- Fourth Image and Description -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-               <!--<img src="{{ site.baseurl }}/img/portfolio/nasa05.jpg" alt="KinKinetics and Emotional Intelligence"> --> 
-                <p>
-                  As we reflect on this incredible experience, one thing is clear—KinKinetics has an exciting path ahead. The insights gained from NASA HRP 2024 will shape our next steps, helping us refine our approach, improve our technology, and explore ways to contribute meaningfully to <strong>human adaptation in space and extreme environments</strong>.                
-                </p>
-              <p>
-                A heartfelt thank you to everyone who engaged with us, shared their expertise, and provided constructive feedback. The journey of KinKinetics is just beginning, and we are more motivated than ever to push forward.
-              </p>
-              <p><strong>Stay tuned for what’s next!</strong></p>
-            </div>
+        <p>
+            The feedback we received from researchers and industry experts was invaluable, helping us refine our approach to <strong>integrating physiological and behavioral insights into real-time decision-making tools</strong> for space travelers. The enthusiasm surrounding our work reinforced its potential impact on future missions.
+        </p>
+
+        <div class="image-container">
+            <img src="{{ site.baseurl }}/img/portfolio/nasa03.jpg" alt="Networking at NASA HRP" class="blog-image">
+            <p class="image-caption">Connecting with pioneers in human spaceflight research</p>
         </div>
-    </div>
-</section>
+
+        <p>
+            Perhaps the most inspiring aspect was connecting with visionaries in human spaceflight research. From pre-award research managers to astronauts and behavioral scientists, each conversation opened doors to new ideas. We explored possibilities for <strong>funding support, research partnerships, and opportunities to elevate KinKinetics</strong> to the next stage.
+        </p>
+
+        <p>
+            As we reflect on this incredible experience, one thing is clear—KinKinetics has an exciting path ahead. The insights gained from NASA HRP 2024 will shape our next steps, helping us refine our technology and contribute meaningfully to <strong>human adaptation in space and extreme environments</strong>.
+        </p>
+
+        <p>
+            A heartfelt thank you to everyone who engaged with us, shared their expertise, and provided constructive feedback. The journey of KinKinetics is just beginning, and we are more motivated than ever to push the boundaries of what's possible.
+        </p>
+
+        <div class="cta-section">
+            <h3>The Future is Bright</h3>
+            <p>Stay tuned as we continue to pioneer neuroeconomic solutions for human space exploration. The next chapter of KinKinetics is being written, and we're thrilled to have you along for the journey.</p>
+        </div>
+    </article>
+</div>
