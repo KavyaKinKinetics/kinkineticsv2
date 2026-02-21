@@ -2,193 +2,326 @@
 layout: page
 title: Kinkinetics at GLEX 2025
 ---
-
 <style>
-    :root {
-        --primary: #0f172a;
-        --accent: #3b82f6;
-        --accent-light: #60a5fa;
-        --text: #334155;
-        --text-light: #64748b;
-        --surface: #ffffff;
-        --background: #f8fafc;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background);
-        color: var(--text);
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
         line-height: 1.6;
     }
 
-    .hero-section {
-        text-align: center;
-        padding: 4rem 1.5rem 2rem;
-        max-width: 900px;
-        margin: 0 auto;
+    /* Simple Header with Logo */
+    .site-header {
+        padding: 24px 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .hero-section h2 {
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
-        font-weight: 700;
-        color: var(--primary);
-        margin: 0 0 0.75rem;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-    }
-
-    .event-meta {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.875rem;
-        color: var(--text-light);
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-
-    .event-meta::before {
-        content: "";
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background: var(--accent);
-        border-radius: 50%;
-    }
-
-    .content-grid {
-        display: grid;
-        gap: 4rem;
+    .header-content {
         max-width: 800px;
         margin: 0 auto;
-        padding: 2rem 1.5rem 4rem;
+        display: flex;
+        align-items: center;
+        gap: 16px;
     }
 
-    .content-block {
-        display: grid;
-        gap: 1.5rem;
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #f8fafc;
     }
 
-    .content-block img {
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .brand-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
+    }
+
+    .back-btn {
+        margin-left: auto;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: #fbbf24;
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    /* Article Header */
+    .article-header {
+        margin-bottom: 40px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .category {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #f8fafc;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        color: #94a3b8;
+        font-weight: 400;
+    }
+
+    /* Content */
+    .content {
+        font-size: 1rem;
+        color: #cbd5e1;
+    }
+
+    .content p {
+        margin-bottom: 20px;
+    }
+
+    .lead {
+        font-size: 1.05rem;
+        color: #f1f5f9;
+        font-weight: 500;
+        margin-bottom: 28px;
+    }
+
+    .content strong {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    /* Images - Clean and proportional */
+    .article-image {
+        margin: 32px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .article-image img {
         width: 100%;
         height: auto;
-        border-radius: 12px;
-        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-height: 400px;
+        object-fit: contain;
+        background: rgba(30, 41, 59, 0.5);
+        display: block;
     }
 
-    .content-block img:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+    .image-caption {
+        padding: 12px 16px;
+        background: rgba(30, 41, 59, 0.8);
+        font-size: 0.8rem;
+        color: #94a3b8;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .content-block p {
-        font-size: 1.125rem;
-        line-height: 1.8;
-        color: var(--text);
+    /* Key Points Box */
+    .key-points {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .key-points h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .key-points ul {
+        list-style: none;
+        padding: 0;
         margin: 0;
     }
 
-    .content-block strong {
-        color: var(--primary);
-        font-weight: 600;
+    .key-points li {
+        padding: 6px 0;
+        padding-left: 16px;
+        position: relative;
+        color: #e2e8f0;
+        font-size: 0.95rem;
     }
 
+    .key-points li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #fbbf24;
+    }
+
+    /* Highlight Box for Acknowledgments */
     .highlight-box {
-        background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
-        border-left: 4px solid var(--accent);
-        padding: 1.5rem;
-        border-radius: 0 12px 12px 0;
-        margin: 2rem 0;
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
     }
 
-    .closing {
-        text-align: center;
-        padding-top: 2rem;
-        border-top: 1px solid #e2e8f0;
-        margin-top: 2rem;
+    .highlight-box p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #e2e8f0;
     }
 
-    .cta-text {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--primary);
-        margin-bottom: 0.5rem;
+    /* Conclusion */
+    .conclusion {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    .conclusion p {
+        font-style: italic;
+        color: #94a3b8;
+    }
+
+    /* Responsive */
     @media (max-width: 640px) {
-        .content-grid {
-            gap: 3rem;
-            padding: 1.5rem;
+        .site-header {
+            padding: 20px 24px;
         }
-        
-        .content-block p {
-            font-size: 1rem;
+
+        .container {
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
         }
     }
 </style>
 
-<section id="glex2025" aria-label="GLEX 2025 Conference Recap">
-    
-    <div class="hero-section">
-        <h2>Pioneering Neuroadaptive Efficiency at GLEX 2025</h2>
-        <span class="event-meta">Global Lunar Exploration Conference • New Delhi • May 2025</span>
+<!-- Header -->
+<header class="site-header">
+    <div class="header-content">
+        <a href="{{ site.baseurl }}/" class="logo-link">
+            <img src="{{ site.baseurl }}/img/kinkinetics.png" alt="KinKinetics" class="logo">
+            <span class="brand-name">KinKinetics</span>
+        </a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Back</a>
     </div>
+</header>
 
-    <div class="content-grid">
+<!-- Main Content -->
+<main class="container">
+    <header class="article-header">
+        <div class="meta">
+            <span class="category">Conference</span>
+            <span>•</span>
+            <span>May 2025</span>
+        </div>
+        <h1>KinKinetics at GLEX 2025</h1>
+        <p class="subtitle">Showcasing the Neuroadaptive Efficiency Paradigm in New Delhi</p>
+    </header>
 
-        <article class="content-block">
-            <img src="{{ site.baseurl }}/img/portfolio/glex5.jpg" 
-                 alt="KinKinetics research team presenting at GLEX 2025 conference" 
-                 loading="lazy">
+    <article class="content">
+        <p class="lead">
+            The <strong>Global Lunar Exploration (GLEX) Conference 2025</strong> brought together international space agencies, researchers, and industry leaders to advance lunar exploration capabilities. KinKinetics was privileged to present our <strong>Neuroadaptive Efficiency Paradigm</strong>—a novel framework integrating neuroeconomics and real-time physiological monitoring to optimize mission outcomes and astronaut well-being.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/glex5.jpg" alt="KinKinetics team presenting at GLEX 2025">
+            <div class="image-caption">Presenting the Neuroadaptive Efficiency Paradigm at GLEX 2025</div>
+        </div>
+
+        <p>
+            Our presentation demonstrated how <strong>cognitive load management and emotional resilience protocols</strong> can be systematically integrated into mission planning. The paradigm addresses critical gaps in current astronaut support systems by providing predictive analytics for performance optimization and real-time intervention triggers based on biometric feedback.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/glex2.jpg" alt="Discussion with ISRO researchers">
+            <div class="image-caption">Strategic dialogue with ISRO and international space agency representatives</div>
+        </div>
+
+        <div class="key-points">
+            <h3>Strategic Outcomes</h3>
+            <ul>
+                <li>Initiated collaboration discussions with ISRO researchers on cognitive fatigue mitigation</li>
+                <li>Validated framework applicability for long-duration lunar mission scenarios</li>
+                <li>Established connections with space medicine specialists for joint research protocols</li>
+                <li>Received operational feedback from former astronauts on psychological support requirements</li>
+            </ul>
+        </div>
+
+        <p>
+            Engagements with <strong>ISRO</strong> and other space agencies revealed immediate applications for addressing decision-making under stress and emotional resilience during extended isolation. These technical exchanges have opened formal pathways to operationalize our research within existing mission support infrastructures.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/glex3.jpg" alt="Panel discussion with astronauts and dignitaries">
+            <div class="image-caption">Panel session with veteran astronauts and international dignitaries</div>
+        </div>
+
+        <p>
+            A highlight of the conference: participating in panel discussions alongside celebrated astronauts and agency directors. Their firsthand accounts of psychological challenges in orbit underscored the imperative for robust mental-health support systems. These insights are directly informing the next iteration of our paradigm, ensuring alignment with genuine operational constraints.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/glex4.jpg" alt="Networking at Yashobhoomi">
+            <div class="image-caption">Networking sessions at Yashobhoomi convention center</div>
+        </div>
+
+        <p>
+            The networking environment at Yashobhoomi facilitated connections with space entrepreneurs, established agencies, and technology innovators. Each conversation reinforced the commercial viability and scientific necessity of astronaut-centric support systems in the expanding lunar economy.
+        </p>
+
+        <div class="highlight-box">
             <p>
-                Presenting at <strong>GLEX 2025</strong> marked a pivotal milestone for KinKinetics. We unveiled our <em>Neuroadaptive Efficiency Paradigm</em>—a first-of-its-kind framework merging neuroeconomics with real-time physiological monitoring. By optimizing both mission outcomes and crew well-being, our approach demonstrates that cognitive resilience is as critical as technical capability in next-generation space exploration.
-            </p>
-        </article>
-
-        <article class="content-block">
-            <img src="{{ site.baseurl }}/img/portfolio/glex2.jpg" 
-                 alt="Research discussion with ISRO scientists" 
-                 loading="lazy">
-            <p>
-                Our dialogue with <strong>ISRO</strong> researchers and international space agencies revealed immediate applications for our paradigm: mitigating cognitive fatigue, enhancing decision-making under extreme stress, and sustaining emotional resilience across long-duration missions. These exchanges have initiated formal collaboration pathways to operationalize our research.
-            </p>
-        </article>
-
-        <article class="content-block">
-            <img src="{{ site.baseurl }}/img/portfolio/glex3.jpg" 
-                 alt="Panel discussion with astronauts and space agency leaders" 
-                 loading="lazy">
-            <p>
-                A career highlight: sharing the stage with veteran astronauts and agency directors. Their firsthand accounts of psychological challenges in orbit validated our mission. These insights are now directly shaping our paradigm's next iteration—ensuring our solutions address genuine operational needs rather than theoretical concerns.
-            </p>
-        </article>
-
-        <article class="content-block">
-            <img src="{{ site.baseurl }}/img/portfolio/glex4.jpg" 
-                 alt="Networking session at Yashobhoomi convention center" 
-                 loading="lazy">
-            <p>
-                The connections forged at Yashobhoomi extended far beyond the programme. From space entrepreneurs to established agencies, each conversation reinforced the commercial and scientific viability of astronaut-centric support systems.
-            </p>
-            
-            <div class="highlight-box">
-                <p>
-                    <strong>Gratitude:</strong> This participation was made possible by <strong>Women in Aerospace (WIA)</strong>, whose support enabled us to represent Cardiff on the global stage and advance our commitment to inclusive space innovation.
-                </p>
-            </div>
-        </article>
-
-        <div class="closing">
-            <p class="cta-text">Advancing the frontier of human performance in space</p>
-            <p style="color: var(--text-light); margin: 0;">
-                Follow our journey as we translate research into mission-ready solutions.
+                <strong>Acknowledgment:</strong> Our participation was made possible by <strong>Women in Aerospace (WIA)</strong>, whose support enabled this milestone engagement and our continued commitment to inclusive space innovation.
             </p>
         </div>
 
-    </div>
-
-</section>
+        <div class="conclusion">
+            <p>
+                GLEX 2025 marked a significant advancement for KinKinetics. The technical validation and strategic relationships established in New Delhi provide critical momentum for advancing the Neuroadaptive Efficiency Paradigm from research concept to mission-ready implementation.
+            </p>
+        </div>
+    </article>
+</main>
