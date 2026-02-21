@@ -2,109 +2,331 @@
 layout: page
 title: Cognitive-support
 ---
-
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
+    * {
         margin: 0;
         padding: 0;
-        text-align: center;
+        box-sizing: border-box;
     }
 
-    h2 {
-        font-family: Arial, sans-serif;
-        font-size: 2.5rem;
-        margin-top: 20px;
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
     }
 
-    p {
-        font-family: Arial, sans-serif;
-        font-size: 1rem;
-        line-height: 1.8;
-        text-align: justify; /* Justify text for the entire page */
-        margin: 15px auto;
-        max-width: 900px; /* Keep content centered with consistent width */
+    /* Simple Header with Logo */
+    .site-header {
+        padding: 24px 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .container {
-        max-width: 900px; /* Center the entire content area */
+    .header-content {
+        max-width: 800px;
         margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
     }
 
-    img {
-        display: block;
-        margin: 20px auto;
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #f8fafc;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .brand-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
+    }
+
+    .back-btn {
+        margin-left: auto;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: #fbbf24;
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    /* Article Header */
+    .article-header {
+        margin-bottom: 40px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .category {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #f8fafc;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        color: #94a3b8;
+        font-weight: 400;
+    }
+
+    /* Content */
+    .content {
+        font-size: 1rem;
+        color: #cbd5e1;
+    }
+
+    .content p {
+        margin-bottom: 20px;
+    }
+
+    .lead {
+        font-size: 1.05rem;
+        color: #f1f5f9;
+        font-weight: 500;
+        margin-bottom: 28px;
+    }
+
+    .content strong {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    /* Images - Clean and proportional */
+    .article-image {
+        margin: 32px 0;
         border-radius: 8px;
-        width: 100%; /* Match image width to text width */
-        max-width: 900px; /* Ensure consistency with text */
-        height: auto; /* Maintain aspect ratio */
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .article-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        background: rgba(30, 41, 59, 0.5);
+        display: block;
+    }
+
+    .image-caption {
+        padding: 12px 16px;
+        background: rgba(30, 41, 59, 0.8);
+        font-size: 0.8rem;
+        color: #94a3b8;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Key Points Box */
+    .key-points {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .key-points h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .key-points ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .key-points li {
+        padding: 6px 0;
+        padding-left: 16px;
+        position: relative;
+        color: #e2e8f0;
+        font-size: 0.95rem;
+    }
+
+    .key-points li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #fbbf24;
+    }
+
+    /* Science Highlight Box */
+    .science-box {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .science-box h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .science-box p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #e2e8f0;
+        font-style: italic;
+    }
+
+    /* Conclusion */
+    .conclusion {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .conclusion p {
+        font-style: italic;
+        color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .site-header {
+            padding: 20px 24px;
+        }
+
+        .container {
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
     }
 </style>
 
-<section id="project-details">
-    <div class="container">
-        <!-- Title and Subtitle -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>Cognitive Support</h2>
-                <p><strong>Mental Assistance</strong></p>
-            </div>
-        </div>
-
-        <!-- First Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/neuro6.jpg" alt="NeuroPsychoEconomics Conference">
-                <p>
-                    KinKinetics had the exceptional opportunity to participate in the <strong>20th NeuroPsychoEconomics Conference</strong> held in Milan in June 2024. This prestigious event was a convergence of leading minds exploring the intersection of neuroscience, psychology, and economics, providing profound insights into cognitive support mechanisms.
-                </p>
-                <p>
-                    One of the highlights was an enlightening talk by <strong>Thomas Zoëga Ramsøy</strong>, CEO and founder of Neurons Inc. He offered invaluable insights into the practical applications of consumer neuroscience, delving deep into consumer behavior and the underlying neural processes. His expertise shed light on how understanding the brain's workings can enhance marketing strategies and consumer engagement.
-                </p>
-            </div>
-        </div>
-
-        <!-- Second Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/neuro3.jpg" alt="Conference Networking">
-                <p>
-                    Engaging with global experts during the networking sessions at the conference enriched our understanding of cognitive support applications. The collaborative discussions sparked new ideas for integrating neuroscience insights into our AI systems.
-                </p>
-            </div>
-        </div>
-
-        <!-- Third Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/neuro1.jpg" alt="Conference Venue">
-                <p>
-                    The state-of-the-art venue in Milan provided an inspiring backdrop for the exchange of cutting-edge research and innovative concepts in neuropsychoeconomics.
-                </p>
-            </div>
-        </div>
-
-        <!-- Fourth Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/neuro4.jpg" alt="KinKinetics Team at the Conference">
-                <p>
-                    Neural foundation of cognition and decision-making was explained in the session by exploring the roles of cortical and subcortical structures. It highlights how ontogeny, reflecting individuality and adaptability, is closely associated with cortical structures, such as the prefrontal cortex, which is crucial for executive functions, planning, and decision-making. On the other hand, phylogeny, representing shared evolutionary traits, relates to deeper subcortical structures, like the amygdala and basal ganglia, which are vital for processing emotions, reward, and reinforcement learning. Together, these regions illustrate the brain's intricate balance between evolutionarily preserved mechanisms and individual adaptability, which drive complex cognitive and decision-making processes.
-                </p>
-                <p>
-                    Our team was proud to represent KinKinetics at this influential event. The collective experiences and knowledge gained are pivotal in advancing our mission to enhance cognitive support technologies.
-                </p>
-            </div>
-        </div>
-
-        <!-- Additional Content -->
-        <div class="row">
-            <div class="col-lg-12">
-                <p>
-                    At KinKinetics, we utilize advancements in neuroscience, computational neuroscience, and behavioral science to deepen our understanding of the human brain. By combining these insights with cutting-edge technologies, we recreate the essence of "kin" to provide profound psychological and emotional support. Our approach integrates the neural mechanisms behind behavior with tailored training systems that enhance the behavioral and emotional dimensions of human interactions. This interdisciplinary fusion of neuroscience and technology enables us to deliver meaningful and impactful support, fostering stronger connections and emotional well-being. The core of this technology revolves around a sophisticated AI system designed to monitor and analyze decisions in real-time.
-                </p>
-            </div>
-        </div>
+<!-- Header -->
+<header class="site-header">
+    <div class="header-content">
+        <a href="{{ site.baseurl }}/" class="logo-link">
+            <img src="{{ site.baseurl }}/img/kinkinetics.png" alt="KinKinetics" class="logo">
+            <span class="brand-name">KinKinetics</span>
+        </a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Back</a>
     </div>
-</section>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+    <header class="article-header">
+        <div class="meta">
+            <span class="category">Research</span>
+            <span>•</span>
+            <span>June 2024</span>
+        </div>
+        <h1>Cognitive Support</h1>
+        <p class="subtitle">Neuroscience-Driven Mental Assistance Systems</p>
+    </header>
+
+    <article class="content">
+        <p class="lead">
+            At <strong>KinKinetics</strong>, we harness advancements in neuroscience, computational modeling, and behavioral science to decode the mechanisms of human cognition. By integrating neural insights with adaptive AI architectures, we engineer systems that provide precise psychological and emotional support—recreating the essence of "kin" through technology.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/neuro6.jpg" alt="NeuroPsychoEconomics Conference Milan 2024">
+            <div class="image-caption">20th NeuroPsychoEconomics Conference, Milan</div>
+        </div>
+
+        <p>
+            Our team participated in the <strong>20th NeuroPsychoEconomics Conference</strong> in Milan, a premier gathering exploring the intersection of neuroscience, psychology, and economic decision-making. The event provided critical insights into cognitive support mechanisms and their applications in high-stakes environments.
+        </p>
+
+        <p>
+            A standout session featured <strong>Thomas Zoëga Ramsøy</strong>, CEO of Neurons Inc., who demonstrated how consumer neuroscience decodes neural processes underlying decision-making. His research on attention, emotion, and memory formation directly informs our approach to building AI systems that anticipate cognitive load and emotional states in real time.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/neuro1.jpg" alt="Networking with global neuroscience experts">
+            <div class="image-caption">Collaborative sessions with global neuroscience researchers</div>
+        </div>
+
+        <div class="key-points">
+            <h3>Research Integration</h3>
+            <ul>
+                <li>Applied consumer neuroscience principles to adaptive support system design</li>
+                <li>Established protocols for real-time cognitive load monitoring</li>
+                <li>Developed frameworks linking neural attention mechanisms to intervention timing</li>
+                <li>Validated emotional engagement metrics through psychophysiological correlation</li>
+            </ul>
+        </div>
+
+        <p>
+            The collaborative environment facilitated exchanges with leading researchers in neuroeconomics and cognitive psychology. These discussions directly shaped our understanding of how <strong>neuroplasticity</strong> and <strong>adaptive learning</strong> can be leveraged to create support systems that evolve with individual user needs.
+        </p>
+
+        <div class="science-box">
+            <h3>Neural Architecture</h3>
+            <p>
+                Human decision-making emerges from the interplay between <strong>cortical structures</strong> (prefrontal cortex for executive function and planning) and <strong>subcortical systems</strong> (amygdala for emotional processing, basal ganglia for reward learning). This dual-system architecture—balancing phylogenetically preserved mechanisms with individual adaptability—forms the blueprint for our AI's predictive models.
+            </p>
+        </div>
+
+        <p>
+            Our technology translates these neuroscientific principles into operational systems. By monitoring decision patterns and physiological markers, our AI identifies cognitive strain before performance degradation occurs. This <strong>predictive intervention model</strong> ensures support is delivered precisely when neural resources are becoming depleted, maintaining optimal cognitive function during critical tasks.
+        </p>
+
+        <p>
+            The interdisciplinary fusion of neuroscience, behavioral economics, and machine learning positions KinKinetics at the forefront of cognitive support technology. We don't just monitor—we understand the neural mechanisms behind behavior to deliver meaningful, timely, and emotionally intelligent assistance.
+        </p>
+
+        <div class="conclusion">
+            <p>
+                Cognitive support is not merely about assistance; it is about understanding the architecture of human thought and engineering systems that preserve cognitive resources when they matter most. This is the foundation upon which KinKinetics builds the future of human-AI collaboration.
+            </p>
+        </div>
+    </article>
+</main>
