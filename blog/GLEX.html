@@ -4,106 +4,191 @@ title: Kinkinetics at GLEX 2025
 ---
 
 <style>
+    :root {
+        --primary: #0f172a;
+        --accent: #3b82f6;
+        --accent-light: #60a5fa;
+        --text: #334155;
+        --text-light: #64748b;
+        --surface: #ffffff;
+        --background: #f8fafc;
+    }
+
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f8f9fa;
-        color: #333;
+        background-color: var(--background);
+        color: var(--text);
+        line-height: 1.6;
     }
 
-    h2 {
-        font-family: "Arial", sans-serif;
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #0056b3;
-        margin-top: 20px;
+    .hero-section {
+        text-align: center;
+        padding: 4rem 1.5rem 2rem;
+        max-width: 900px;
+        margin: 0 auto;
     }
 
-    p {
-        font-family: "Arial", sans-serif;
-        font-size: 1rem;
-        line-height: 1.8;
-        text-align: justify;
-        margin: 20px auto;
-        max-width: 800px;
+    .hero-section h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        color: var(--primary);
+        margin: 0 0 0.75rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
     }
 
-    .container {
-        display: flex;
-        flex-direction: column;
+    .event-meta {
+        display: inline-flex;
         align-items: center;
-        padding: 20px;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        color: var(--text-light);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 
-    img {
-        margin: 20px auto;
-        border-radius: 8px;
-        width: 100%;
+    .event-meta::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: var(--accent);
+        border-radius: 50%;
+    }
+
+    .content-grid {
+        display: grid;
+        gap: 4rem;
         max-width: 800px;
-        height: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
     }
 
-    .text-muted {
-        font-weight: bold;
-        color: #6c757d;
+    .content-block {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .content-block img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content-block img:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .content-block p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--text);
+        margin: 0;
+    }
+
+    .content-block strong {
+        color: var(--primary);
+        font-weight: 600;
+    }
+
+    .highlight-box {
+        background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+        border-left: 4px solid var(--accent);
+        padding: 1.5rem;
+        border-radius: 0 12px 12px 0;
+        margin: 2rem 0;
+    }
+
+    .closing {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #e2e8f0;
+        margin-top: 2rem;
+    }
+
+    .cta-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+        .content-grid {
+            gap: 3rem;
+            padding: 1.5rem;
+        }
+        
+        .content-block p {
+            font-size: 1rem;
+        }
     }
 </style>
 
-<section id="glex2025">
-    <div class="container">
+<section id="glex2025" aria-label="GLEX 2025 Conference Recap">
+    
+    <div class="hero-section">
+        <h2>Pioneering Neuroadaptive Efficiency at GLEX 2025</h2>
+        <span class="event-meta">Global Lunar Exploration Conference • New Delhi • May 2025</span>
+    </div>
 
-        <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>GLEX 2025 Showcasing the Neuroadaptive Efficiency Paradigm</h2>
-                <p class="text-muted">Global Lunar Exploration (GLEX) Conference, New Delhi, May 2025</p>
-            </div>
-        </div>
+    <div class="content-grid">
 
-        <!-- First Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/glex5.jpg" alt="KinKinetics Team at GLEX 2025">
+        <article class="content-block">
+            <img src="{{ site.baseurl }}/img/portfolio/glex5.jpg" 
+                 alt="KinKinetics research team presenting at GLEX 2025 conference" 
+                 loading="lazy">
+            <p>
+                Presenting at <strong>GLEX 2025</strong> marked a pivotal milestone for KinKinetics. We unveiled our <em>Neuroadaptive Efficiency Paradigm</em>—a first-of-its-kind framework merging neuroeconomics with real-time physiological monitoring. By optimizing both mission outcomes and crew well-being, our approach demonstrates that cognitive resilience is as critical as technical capability in next-generation space exploration.
+            </p>
+        </article>
+
+        <article class="content-block">
+            <img src="{{ site.baseurl }}/img/portfolio/glex2.jpg" 
+                 alt="Research discussion with ISRO scientists" 
+                 loading="lazy">
+            <p>
+                Our dialogue with <strong>ISRO</strong> researchers and international space agencies revealed immediate applications for our paradigm: mitigating cognitive fatigue, enhancing decision-making under extreme stress, and sustaining emotional resilience across long-duration missions. These exchanges have initiated formal collaboration pathways to operationalize our research.
+            </p>
+        </article>
+
+        <article class="content-block">
+            <img src="{{ site.baseurl }}/img/portfolio/glex3.jpg" 
+                 alt="Panel discussion with astronauts and space agency leaders" 
+                 loading="lazy">
+            <p>
+                A career highlight: sharing the stage with veteran astronauts and agency directors. Their firsthand accounts of psychological challenges in orbit validated our mission. These insights are now directly shaping our paradigm's next iteration—ensuring our solutions address genuine operational needs rather than theoretical concerns.
+            </p>
+        </article>
+
+        <article class="content-block">
+            <img src="{{ site.baseurl }}/img/portfolio/glex4.jpg" 
+                 alt="Networking session at Yashobhoomi convention center" 
+                 loading="lazy">
+            <p>
+                The connections forged at Yashobhoomi extended far beyond the programme. From space entrepreneurs to established agencies, each conversation reinforced the commercial and scientific viability of astronaut-centric support systems.
+            </p>
+            
+            <div class="highlight-box">
                 <p>
-                    Participating in <strong>GLEX 2025</strong> was a tremendous honour for the KinKinetics team. After months of dedicated preparation, we had the privilege of presenting our <em>Neuroadaptive Efficiency Paradigm</em>—our novel framework that integrates neuroeconomics and real-time physiological monitoring to optimise both mission objectives and astronaut well-being. Sharing our research on such a prestigious global stage reaffirmed the importance of psychological and emotional support in the next era of space exploration.
+                    <strong>Gratitude:</strong> This participation was made possible by <strong>Women in Aerospace (WIA)</strong>, whose support enabled us to represent Cardiff on the global stage and advance our commitment to inclusive space innovation.
                 </p>
             </div>
-        </div>
+        </article>
 
-        <!-- Second Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/glex2.jpg" alt="Discussion with ISRO Researchers">
-                <p>
-                    We were thrilled to engage with leading researchers from <strong>ISRO</strong> and other space agencies, exchanging ideas on how the Neuroadaptive Efficiency Paradigm can address cognitive fatigue, decision-making under stress, and emotional resilience during long-duration missions. These interdisciplinary conversations sparked potential collaborations that will help translate our model into operational applications.
-                </p>
-            </div>
-        </div>
-
-        <!-- Third Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/glex2.jpg" alt="Panel with Astronauts and Dignitaries">
-                <p>
-                    A highlight of GLEX was the panel discussion alongside celebrated astronauts and international dignitaries. Hearing firsthand accounts from crew members underscored the critical need for robust mental-health support systems in orbit. The insights we gained will directly inform the next iteration of our paradigm and help strengthen mission safety and performance.
-                </p>
-            </div>
-        </div>
-
-        <!-- Fourth Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/glex4.jpg" alt="Networking at Yashobhoomi">
-                <p>
-                    Beyond the sessions, the networking at Yashobhoomi was unparalleled. From meeting world-leading space entrepreneurs to forging partnerships with startups and established agencies, every conversation fuelled our passion for space entrepreneurship. We’re deeply grateful to Women in Aerospace (WIA) for funding our participation, which made this milestone achievement possible.
-                </p>
-                <p>
-                    As we return to Cardiff inspired and energised, the KinKinetics team is committed to advancing the Neuroadaptive Efficiency Paradigm and championing astronaut well-being on every mission. Stay tuned for updates on our collaborations and upcoming projects!
-                </p>
-            </div>
+        <div class="closing">
+            <p class="cta-text">Advancing the frontier of human performance in space</p>
+            <p style="color: var(--text-light); margin: 0;">
+                Follow our journey as we translate research into mission-ready solutions.
+            </p>
         </div>
 
     </div>
+
 </section>
