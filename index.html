@@ -509,6 +509,7 @@
         </div>
     </section>
 <!-- Blog Section -->
+<!-- Blog Section -->
 <section id="blogs" class="py-24 relative bg-black">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16 reveal">
@@ -517,7 +518,8 @@
             <p class="text-slate-300 text-lg">Explore our latest research findings, industry insights, and thoughts.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+            
             <!-- Blog Post 1 -->
             <article class="glass-card rounded-2xl overflow-hidden blog-card reveal">
                 <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
@@ -561,7 +563,7 @@
             <!-- Blog Post 3 -->
             <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
                 <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-dark flex items-center justify-center relative overflow-hidden">
-                     <img src="img/glexlogo.png" alt="Kinkinetics" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    <img src="img/glexlogo.png" alt="GLEX 2025" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
                 </div>
                 <div class="p-6">
                     <div class="flex items-center gap-2 mb-3">
@@ -570,22 +572,126 @@
                         <span class="text-xs text-slate-500">April 28, 2025</span>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">GLEX 2025</h4>
-                    <p class="text-slate-400 text-sm mb-4"> GLEX 2025 Showcasing the Neuroadaptive Efficiency Paradigm.</p>
+                    <p class="text-slate-400 text-sm mb-4">GLEX 2025 Showcasing the Neuroadaptive Efficiency Paradigm.</p>
                     <a href="blog/post3.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
                         Read More 
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
                 </div>
             </article>
+
+            <!-- Hidden Blog Posts (4, 5, 6) -->
+            <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 100ms; display: none;">
+                <div class="h-48 bg-gradient-to-br from-kk-dark to-kk-blue flex items-center justify-center relative overflow-hidden">
+                    <img src="img/blog4.jpg" alt="Research" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xs text-mustard-400 font-medium">Research</span>
+                        <span class="text-slate-600">•</span>
+                        <span class="text-xs text-slate-500">March 15, 2025</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Biometric Monitoring in Extreme Environments</h4>
+                    <p class="text-slate-400 text-sm mb-4">New advances in real-time physiological monitoring for astronaut health management.</p>
+                    <a href="blog/post4.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                        Read More 
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 200ms; display: none;">
+                <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
+                    <img src="img/blog5.jpg" alt="Technology" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xs text-mustard-400 font-medium">Technology</span>
+                        <span class="text-slate-600">•</span>
+                        <span class="text-xs text-slate-500">Feb 20, 2025</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Predictive Analytics for Crew Performance</h4>
+                    <p class="text-slate-400 text-sm mb-4">Machine learning models that anticipate cognitive load before mission-critical decisions.</p>
+                    <a href="blog/post5.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                        Read More 
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </article>
+
+            <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 300ms; display: none;">
+                <div class="h-48 bg-gradient-to-br from-kk-light to-kk-dark flex items-center justify-center relative overflow-hidden">
+                    <img src="img/blog6.jpg" alt="Innovation" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xs text-mustard-400 font-medium">Innovation</span>
+                        <span class="text-slate-600">•</span>
+                        <span class="text-xs text-slate-500">Jan 10, 2025</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Neuroplasticity Training for Space Adaptation</h4>
+                    <p class="text-slate-400 text-sm mb-4">Cognitive training protocols to enhance neural adaptation in microgravity environments.</p>
+                    <a href="blog/post6.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                        Read More 
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </article>
+
         </div>
 
         <div class="text-center mt-12 reveal">
-            <a href="blog/" class="inline-flex items-center gap-2 px-6 py-3 border border-mustard-500/50 hover:border-mustard-400 text-mustard-400 font-medium rounded-lg transition-all hover:bg-mustard-500/10">
-                View All Articles
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
+            <button id="view-all-btn" onclick="toggleBlogs()" class="inline-flex items-center gap-2 px-6 py-3 border border-mustard-500/50 hover:border-mustard-400 text-mustard-400 font-medium rounded-lg transition-all hover:bg-mustard-500/10 cursor-pointer">
+                <span id="btn-text">View All Articles</span>
+                <svg id="btn-icon" class="w-4 h-4 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
         </div>
     </div>
+</section>
+
+<script>
+function toggleBlogs() {
+    const hiddenBlogs = document.querySelectorAll('.hidden-blog');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const isHidden = hiddenBlogs[0].style.display === 'none';
+    
+    hiddenBlogs.forEach((blog, index) => {
+        if (isHidden) {
+            blog.style.display = 'block';
+            // Trigger reflow for animation
+            blog.offsetHeight;
+            blog.classList.add('revealed');
+        } else {
+            blog.style.display = 'none';
+            blog.classList.remove('revealed');
+        }
+    });
+    
+    if (isHidden) {
+        btnText.textContent = 'Show Less';
+        btnIcon.style.transform = 'rotate(180deg)';
+    } else {
+        btnText.textContent = 'View All Articles';
+        btnIcon.style.transform = 'rotate(0deg)';
+    }
+}
+</script>
+
+<style>
+.hidden-blog {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hidden-blog.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
 </section>
 
     <!-- Contact Section -->
