@@ -4,104 +4,339 @@ title: Neuroeconomics and its Role for Long Duration Space Missions
 ---
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
+    * {
         margin: 0;
         padding: 0;
-        background-color: #f8f9fa;
-        color: #333;
+        box-sizing: border-box;
     }
 
-    h2 {
-        font-family: "Arial", sans-serif;
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #0056b3; /* Dark blue for the title */
-        margin-top: 20px;
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
     }
 
-    p {
-        font-family: "Arial", sans-serif;
-        font-size: 1rem;
-        line-height: 1.8;
-        text-align: justify; /* Justified text for consistency */
-        margin: 20px auto;
-        max-width: 800px; /* Restrict content width */
+    /* Simple Header with Logo */
+    .site-header {
+        padding: 24px 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .container {
+    .header-content {
+        max-width: 800px;
+        margin: 0 auto;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        padding: 20px;
+        gap: 16px;
     }
 
-    img {
-        margin: 20px auto;
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #f8fafc;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .brand-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
+    }
+
+    .back-btn {
+        margin-left: auto;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: #fbbf24;
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    /* Article Header */
+    .article-header {
+        margin-bottom: 40px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .category {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #f8fafc;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        color: #94a3b8;
+        font-weight: 400;
+    }
+
+    /* Content */
+    .content {
+        font-size: 1rem;
+        color: #cbd5e1;
+    }
+
+    .content p {
+        margin-bottom: 20px;
+    }
+
+    .lead {
+        font-size: 1.05rem;
+        color: #f1f5f9;
+        font-weight: 500;
+        margin-bottom: 28px;
+    }
+
+    .content strong {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    /* Images - Clean and proportional */
+    .article-image {
+        margin: 32px 0;
         border-radius: 8px;
-        width: 100%;
-        max-width: 800px; /* Ensure images align with text width */
-        height: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for modern look */
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .text-muted {
-        font-weight: bold; /* Bold subtitle */
-        color: #6c757d; /* Subtle gray for subtitle */
+    .article-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        background: rgba(30, 41, 59, 0.5);
+        display: block;
+    }
+
+    .image-caption {
+        padding: 12px 16px;
+        background: rgba(30, 41, 59, 0.8);
+        font-size: 0.8rem;
+        color: #94a3b8;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Achievement Box */
+    .achievement-box {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .achievement-box h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .achievement-box p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #e2e8f0;
+    }
+
+    /* Key Points Box */
+    .key-points {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .key-points h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .key-points ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .key-points li {
+        padding: 6px 0;
+        padding-left: 16px;
+        position: relative;
+        color: #e2e8f0;
+        font-size: 0.95rem;
+    }
+
+    .key-points li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #fbbf24;
+    }
+
+    /* Conclusion */
+    .conclusion {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .conclusion p {
+        font-style: italic;
+        color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .site-header {
+            padding: 20px 24px;
+        }
+
+        .container {
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
     }
 </style>
 
-<section id="project-details">
-    <div class="container">
-        <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Neuroeconomics and its Role for Long Duration Space Missions</h2>
-                <p class="text-muted">ELGRA Conference 2024.</p>
-            </div>
-        </div>
-
-        <!-- First Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/elgra1.png" alt="ELGRA Conference 2024 Presentation">
-                <p>
-                    KinKinetics had the honor of presenting at the prestigious <strong>ELGRA Conference 2024</strong>. This international event brought together experts in gravitational and space biology, engineering, and neuroscience to discuss advancements in long-duration space missions. Our presentation focused on the intersection of neuroeconomics and its application in optimizing human performance in extreme environments. We were absolutely honored to be awarded a prestigious scholarship during the ELGRA Conference 2024, which acknowledged our efforts in advancing neuroeconomics for long-duration space missions. As a part of this recognition, we had the privilege of receiving a signed photo of astronaut Tim Peake. This incredible gesture serves as a testament to our commitment to innovation and collaboration in addressing the unique challenges of space exploration.
-                </p>
-                <p>
-                    Neuroeconomics, an interdisciplinary field, combines neuroscience, behavioral economics, and psychology to understand decision-making processes. At KinKinetics, we highlighted how this framework is pivotal in addressing the cognitive, emotional, and behavioral challenges faced during extended space missions.
-                </p>
-            </div>
-        </div>
-
-        <!-- Second Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/elgra2.png" alt="Discussions at ELGRA 2024">
-                <p>
-                    One of the key takeaways from the conference was the importance of interdisciplinary collaboration in tackling challenges unique to space environments. Engaging with leading researchers and industry professionals allowed KinKinetics to exchange ideas on how neuroeconomics can help astronauts adapt to cognitive fatigue, decision-making under stress, and emotional resilience during isolation.
-                </p>
-            </div>
-        </div>
-
-        <!-- Third Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/elgra3.jpg" alt="Panel Discussion at ELGRA Conference 2024">
-                <p>
-                    A highlight of the event was participating in a panel discussion on the psychological and behavioral aspects of long-duration space missions. KinKinetics contributed insights into the integration of AI-driven decision-making tools and neuroeconomics to enhance mission outcomes, fostering both individual and team resilience.
-                </p>
-            </div>
-        </div>
-
-        <!-- Fourth Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/elgra4.jpg" alt="KinKinetics Presentation at ELGRA">
-                <p>
-                    KinKinetics remains dedicated to advancing the application of neuroeconomics for long-duration space missions. By integrating neuroscience, behavioral science, and technology, we aim to develop innovative solutions to address the unique challenges astronauts face. The ELGRA Conference 2024 provided a platform to share our vision and gain invaluable insights to further refine our approach.
-                </p>
-            </div>
-        </div>
+<!-- Header -->
+<header class="site-header">
+    <div class="header-content">
+        <a href="{{ site.baseurl }}/" class="logo-link">
+            <img src="{{ site.baseurl }}/img/kinkinetics.png" alt="KinKinetics" class="logo">
+            <span class="brand-name">KinKinetics</span>
+        </a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Back</a>
     </div>
-</section>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+    <header class="article-header">
+        <div class="meta">
+            <span class="category">Conference</span>
+            <span>•</span>
+            <span>September 2024</span>
+        </div>
+        <h1>Neuroeconomics for Long-Duration Space Missions</h1>
+        <p class="subtitle">ELGRA Conference 2024 — European Low Gravity Research Association</p>
+    </header>
+
+    <article class="content">
+        <p class="lead">
+            <strong>Neuroeconomics</strong> — the intersection of neuroscience, behavioral economics, and psychology — provides a critical framework for understanding decision-making under extreme conditions. At the <strong>ELGRA Conference 2024</strong>, KinKinetics presented research on applying this discipline to optimize human performance during extended spaceflight operations.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/elgra1.png" alt="KinKinetics presentation at ELGRA Conference 2024">
+            <div class="image-caption">Presenting neuroeconomic frameworks for space mission optimization</div>
+        </div>
+
+        <p>
+            The ELGRA Conference convened international experts in gravitational biology, aerospace engineering, and neuroscience to address challenges in long-duration space missions. Our presentation focused on how neuroeconomic models can predict and mitigate cognitive degradation, decision fatigue, and behavioral anomalies that emerge during extended isolation and confinement.
+        </p>
+
+        <div class="achievement-box">
+            <h3>Recognition</h3>
+            <p>
+                KinKinetics was awarded a prestigious ELGRA scholarship recognizing our contributions to neuroeconomics in space research. As part of this honor, we received a signed photograph from astronaut <strong>Tim Peake</strong>, underscoring the practical relevance of our work to operational space agencies.
+            </p>
+        </div>
+
+        <p>
+            The core thesis of our research: <strong>decision-making architectures change under extreme environments</strong>. Risk preferences shift. Temporal discounting accelerates. Social cooperation dynamics alter. Neuroeconomics provides the quantitative tools to model these changes and design interventions that preserve mission-critical judgment.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/elgra2.png" alt="Research discussions at ELGRA 2024">
+            <div class="image-caption">Interdisciplinary dialogue with gravitational and space biology researchers</div>
+        </div>
+
+        <div class="key-points">
+            <h3>Research Applications</h3>
+            <ul>
+                <li>Cognitive fatigue mitigation through predictive modeling</li>
+                <li>Stress-induced decision bias correction protocols</li>
+                <li>Emotional resilience quantification and training</li>
+                <li>Team coordination optimization under communication delays</li>
+            </ul>
+        </div>
+
+        <p>
+            Engagements with leading researchers and ESA mission planners revealed immediate operational needs for neuroeconomic tools. The framework's ability to integrate <strong>biometric markers</strong> with <strong>behavioral economic models</strong> offers a pathway to real-time cognitive support systems — precisely the domain KinKinetics is developing.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/elgra3.jpg" alt="Panel discussion on psychological aspects of spaceflight">
+            <div class="image-caption">Panel session on behavioral and psychological factors in long-duration missions</div>
+        </div>
+
+        <p>
+            A highlight: contributing to the panel on psychological and behavioral aspects of deep space exploration. We presented our integration of <strong>AI-driven decision support tools</strong> with neuroeconomic principles — systems that enhance both individual cognitive performance and team-level resilience through adaptive feedback architectures.
+        </p>
+
+        <div class="article-image">
+            <img src="{{ site.baseurl }}/img/portfolio/elgra4.jpg" alt="KinKinetics research showcase at ELGRA">
+            <div class="image-caption">Showcasing neuroadaptive efficiency frameworks for mission applications</div>
+        </div>
+
+        <p>
+            The conference validated our approach: neuroeconomics is not merely theoretical but operationally urgent. As missions extend to lunar bases and Mars transit, the cost of suboptimal decision-making compounds. KinKinetics is positioned to translate these research insights into mission-ready systems that preserve cognitive clarity when it matters most.
+        </p>
+
+        <div class="conclusion">
+            <p>
+                ELGRA 2024 reinforced our commitment to advancing neuroeconomics as a foundational discipline for space exploration. By integrating neuroscience, behavioral science, and adaptive technology, we are developing the cognitive infrastructure required for humanity's next era of deep space operations.
+            </p>
+        </div>
+    </article>
+</main>
