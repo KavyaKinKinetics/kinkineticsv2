@@ -1,0 +1,513 @@
+---
+layout: page
+title: Training the Brain for Space
+---
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
+    }
+
+    /* Simple Header with Logo */
+    .site-header {
+        padding: 24px 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #f8fafc;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .brand-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
+    }
+
+    .back-btn {
+        margin-left: auto;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: #fbbf24;
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    /* Article Header */
+    .article-header {
+        margin-bottom: 40px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .category {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #f8fafc;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        color: #94a3b8;
+        font-weight: 400;
+    }
+
+    /* Content */
+    .content {
+        font-size: 1rem;
+        color: #cbd5e1;
+    }
+
+    .content p {
+        margin-bottom: 20px;
+    }
+
+    .lead {
+        font-size: 1.05rem;
+        color: #f1f5f9;
+        font-weight: 500;
+        margin-bottom: 28px;
+    }
+
+    .content strong {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    /* Pull Quote */
+    .pull-quote {
+        margin: 40px 0;
+        padding: 24px 32px;
+        border-left: 3px solid #fbbf24;
+        background: rgba(30, 41, 59, 0.4);
+        border-radius: 0 8px 8px 0;
+    }
+
+    .pull-quote p {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #f8fafc;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-top: 48px;
+        margin-bottom: 20px;
+    }
+
+    .section-header h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #f8fafc;
+        margin-bottom: 8px;
+    }
+
+    .section-header p {
+        color: #94a3b8;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    /* Key Points Box */
+    .key-points {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .key-points h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .key-points ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .key-points li {
+        padding: 6px 0;
+        padding-left: 16px;
+        position: relative;
+        color: #e2e8f0;
+        font-size: 0.95rem;
+    }
+
+    .key-points li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #fbbf24;
+    }
+
+    /* Training Modules */
+    .training-grid {
+        display: grid;
+        gap: 16px;
+        margin: 32px 0;
+    }
+
+    .training-item {
+        background: rgba(30, 41, 59, 0.4);
+        padding: 20px 24px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .training-item h4 {
+        font-size: 0.9rem;
+        color: #fbbf24;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .training-item p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #cbd5e1;
+    }
+
+    /* Comparison Table */
+    .comparison {
+        margin: 32px 0;
+        display: grid;
+        gap: 24px;
+    }
+
+    .comparison-block h3 {
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    .comparison-block ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .comparison-block li {
+        padding: 8px 0;
+        padding-left: 20px;
+        position: relative;
+        color: #cbd5e1;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comparison-block li:last-child {
+        border-bottom: none;
+    }
+
+    .comparison-block.traditional li::before {
+        content: "○";
+        position: absolute;
+        left: 0;
+        color: #64748b;
+    }
+
+    .comparison-block.neuroplasticity li::before {
+        content: "●";
+        position: absolute;
+        left: 0;
+        color: #fbbf24;
+    }
+
+    /* CTA Box */
+    .cta-box {
+        background: rgba(251, 191, 36, 0.1);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        padding: 24px;
+        border-radius: 8px;
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .cta-box p {
+        margin: 0;
+        color: #f1f5f9;
+        font-weight: 500;
+    }
+
+    .cta-box a {
+        color: #fbbf24;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    /* Conclusion */
+    .conclusion {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .conclusion p {
+        font-style: italic;
+        color: #94a3b8;
+    }
+
+    /* Series Navigation */
+    .series-nav {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .series-nav span {
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .series-nav .next {
+        color: #fbbf24;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .site-header {
+            padding: 20px 24px;
+        }
+
+        .container {
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .pull-quote p {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="header-content">
+        <a href="{{ site.baseurl }}/" class="logo-link">
+            <img src="{{ site.baseurl }}/img/kinkinetics.png" alt="KinKinetics" class="logo">
+            <span class="brand-name">KinKinetics</span>
+        </a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Back</a>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+    <header class="article-header">
+        <div class="meta">
+            <span class="category">Research Series</span>
+            <span>•</span>
+            <span>Post 1 of 2</span>
+        </div>
+        <h1>Training the Brain for Space</h1>
+        <p class="subtitle">Neuroplasticity as a Mission-Critical Skill</p>
+    </header>
+
+    <article class="content">
+        <p class="lead">
+            Space adaptation is not just a physical challenge. It is a neurological one.
+        </p>
+
+        <p>
+            When astronauts transition into microgravity, the brain must rapidly recalibrate how it processes balance, movement, spatial orientation, and decision-making. The <strong>vestibular system</strong> — which depends on gravity — suddenly becomes unreliable. Visual signals conflict with internal body cues. Reaction timing shifts. Even risk assessment can subtly change.
+        </p>
+
+        <p>
+            At KinKinetics, one of our research teams is focused on a central question: <strong>Can we deliberately train neuroplasticity to accelerate adaptation in space?</strong>
+        </p>
+
+        <div class="pull-quote">
+            <p>We train the brain to adapt faster than the environment destabilizes it.</p>
+        </div>
+
+        <div class="section-header">
+            <h2>Why Neuroplasticity Matters in Microgravity</h2>
+            <p>The operational cost of slow adaptation</p>
+        </div>
+
+        <p>
+            <strong>Neuroplasticity</strong> refers to the brain's ability to reorganize its neural pathways in response to new environments. In space, this plasticity determines:
+        </p>
+
+        <div class="key-points">
+            <h3>Critical Performance Factors</h3>
+            <ul>
+                <li>How quickly motion sickness resolves</li>
+                <li>How efficiently spatial disorientation stabilizes</li>
+                <li>How reliably executive function recalibrates</li>
+                <li>How accurately decisions are made under sensory uncertainty</li>
+            </ul>
+        </div>
+
+        <p>
+            Natural adaptation occurs — but it takes time. And in high-risk missions, time is operationally expensive. Our approach at KinKinetics is to treat neuroplasticity not as a passive recovery process, but as a <strong>trainable capability</strong>.
+        </p>
+
+        <div class="section-header">
+            <h2>What We Are Building</h2>
+            <p>Structured cognitive training protocols for extreme environments</p>
+        </div>
+
+        <p>
+            Our research team is developing structured cognitive training protocols designed specifically for:
+        </p>
+
+        <div class="training-grid">
+            <div class="training-item">
+                <h4>Long-Duration Spaceflight</h4>
+                <p>Extended orbital missions requiring sustained cognitive performance</p>
+            </div>
+            <div class="training-item">
+                <h4>Lunar Surface Missions</h4>
+                <p>Partial gravity environments with unique sensorimotor demands</p>
+            </div>
+            <div class="training-item">
+                <h4>Mars Transit Environments</h4>
+                <p>Deep space confinement with communication delays and isolation</p>
+            </div>
+            <div class="training-item">
+                <h4>Confinement & Isolation Settings</h4>
+                <p>High-fidelity analog environments for protocol validation</p>
+            </div>
+        </div>
+
+        <p>
+            These protocols focus on accelerating <strong>vestibular-cognitive recalibration</strong> before and during mission deployment. We design tasks that introduce controlled sensory mismatch and uncertainty:
+        </p>
+
+        <div class="key-points">
+            <h3>Training Methodologies</h3>
+            <ul>
+                <li>Adaptive inhibitory control paradigms</li>
+                <li>Spatial decision tasks under ambiguity</li>
+                <li>Time-pressured executive control challenges</li>
+                <li>Sensorimotor recalibration exercises</li>
+            </ul>
+        </div>
+
+        <div class="section-header">
+            <h2>Why This Changes the Training Paradigm</h2>
+            <p>From physical conditioning to cognitive engineering</p>
+        </div>
+
+        <div class="comparison">
+            <div class="comparison-block traditional">
+                <h3>Traditional Preparation</h3>
+                <ul>
+                    <li>Physical conditioning</li>
+                    <li>Technical simulation</li>
+                    <li>Emergency response rehearsal</li>
+                </ul>
+            </div>
+            <div class="comparison-block neuroplasticity">
+                <h3>Neuroplasticity Training Adds</h3>
+                <ul>
+                    <li>Adaptive cognition</li>
+                    <li>Stress-stable executive control</li>
+                    <li>Sensory reweighting efficiency</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>
+            Space is unforgiving. The adaptive brain must be <strong>engineered — not assumed</strong>.
+        </p>
+
+        <div class="cta-box">
+            <p>Interested in collaborative research or neuroadaptive training systems? <a href="{{ site.baseurl }}/contact">Connect with KinKinetics</a></p>
+        </div>
+
+        <div class="conclusion">
+            <p>
+                Human performance in space begins with a plastic brain. In our next post, we'll explore how stress physiology interacts with neuroplasticity — and how KinKinetics integrates real-time physiological feedback into cognitive adaptation systems.
+            </p>
+        </div>
+
+        <div class="series-nav">
+            <span>Research Series</span>
+            <a href="#" class="next">Next: Stress Physiology & Neuroplasticity →</a>
+        </div>
+    </article>
+</main>
