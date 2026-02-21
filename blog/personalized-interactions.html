@@ -131,50 +131,6 @@ title: Cognitive Stability Under Stress
         font-weight: 600;
     }
 
-    /* Post Section Divider */
-    .post-section {
-        margin-bottom: 64px;
-        padding-bottom: 48px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .post-section:last-of-type {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-
-    .post-header {
-        margin-bottom: 32px;
-    }
-
-    .post-label {
-        display: inline-block;
-        font-size: 0.75rem;
-        color: #fbbf24;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        padding: 4px 12px;
-        background: rgba(251, 191, 36, 0.1);
-        border-radius: 4px;
-    }
-
-    .post-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #f8fafc;
-        margin-bottom: 8px;
-        line-height: 1.3;
-    }
-
-    .post-subtitle {
-        font-size: 1rem;
-        color: #94a3b8;
-        font-weight: 400;
-    }
-
     /* Pull Quote */
     .pull-quote {
         margin: 40px 0;
@@ -192,61 +148,23 @@ title: Cognitive Stability Under Stress
         line-height: 1.4;
     }
 
-    /* Key Points Box */
-    .key-points {
-        background: rgba(30, 41, 59, 0.4);
-        border-left: 3px solid #fbbf24;
-        padding: 20px 24px;
-        margin: 32px 0;
-        border-radius: 0 6px 6px 0;
-    }
-
-    .key-points h3 {
-        font-size: 0.8rem;
-        color: #fbbf24;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 12px;
-        font-weight: 700;
-    }
-
-    .key-points ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .key-points li {
-        padding: 6px 0;
-        padding-left: 16px;
-        position: relative;
-        color: #e2e8f0;
-        font-size: 0.95rem;
-    }
-
-    .key-points li::before {
-        content: "—";
-        position: absolute;
-        left: 0;
-        color: #fbbf24;
-    }
-
-    /* Protocol Grid */
-    .protocol-grid {
+    /* Stress Factors Grid */
+    .stress-grid {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
         margin: 32px 0;
     }
 
-    .protocol-item {
+    .stress-item {
         background: rgba(30, 41, 59, 0.4);
-        padding: 20px 24px;
+        padding: 20px;
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
-    .protocol-item h4 {
-        font-size: 0.9rem;
+    .stress-item h4 {
+        font-size: 0.85rem;
         color: #fbbf24;
         font-weight: 600;
         margin-bottom: 8px;
@@ -254,66 +172,66 @@ title: Cognitive Stability Under Stress
         letter-spacing: 0.5px;
     }
 
-    .protocol-item p {
+    .stress-item p {
         margin: 0;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         color: #cbd5e1;
-    }
-
-    /* Comparison Table */
-    .comparison {
-        margin: 32px 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-    }
-
-    .comparison-block h3 {
-        font-size: 0.8rem;
-        color: #64748b;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 12px;
-        font-weight: 600;
-    }
-
-    .comparison-block ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .comparison-block li {
-        padding: 8px 0;
-        padding-left: 20px;
-        position: relative;
-        color: #cbd5e1;
-        font-size: 0.95rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .comparison-block li:last-child {
-        border-bottom: none;
-    }
-
-    .comparison-block.traditional li::before {
-        content: "○";
-        position: absolute;
-        left: 0;
-        color: #64748b;
-    }
-
-    .comparison-block.neuroadaptive li::before {
-        content: "●";
-        position: absolute;
-        left: 0;
-        color: #fbbf24;
     }
 
     @media (max-width: 640px) {
-        .comparison {
+        .stress-grid {
             grid-template-columns: 1fr;
         }
+    }
+
+    /* System Components */
+    .system-components {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 24px;
+        margin: 32px 0;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .system-components h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+        font-weight: 700;
+    }
+
+    .component-list {
+        display: grid;
+        gap: 12px;
+    }
+
+    .component-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .component-icon {
+        color: #fbbf24;
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1;
+        margin-top: 2px;
+    }
+
+    .component-text h4 {
+        font-size: 0.95rem;
+        color: #f1f5f9;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+
+    .component-text p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #94a3b8;
     }
 
     /* Framework Box */
@@ -338,6 +256,48 @@ title: Cognitive Stability Under Stress
         margin: 0;
         font-size: 0.95rem;
         color: #e2e8f0;
+        font-style: italic;
+    }
+
+    /* Applications Grid */
+    .applications {
+        margin: 32px 0;
+    }
+
+    .applications h3 {
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+
+    .app-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .app-item {
+        background: rgba(30, 41, 59, 0.4);
+        padding: 16px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .app-item h4 {
+        font-size: 0.9rem;
+        color: #f1f5f9;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    @media (max-width: 640px) {
+        .app-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     /* Conclusion */
@@ -360,8 +320,6 @@ title: Cognitive Stability Under Stress
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 16px;
     }
 
     .series-nav span {
@@ -369,6 +327,18 @@ title: Cognitive Stability Under Stress
         color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+    }
+
+    .series-nav a {
+        color: #fbbf24;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: opacity 0.2s;
+    }
+
+    .series-nav a:hover {
+        opacity: 0.8;
     }
 
     /* Responsive */
@@ -385,12 +355,14 @@ title: Cognitive Stability Under Stress
             font-size: 1.5rem;
         }
 
-        .post-title {
-            font-size: 1.25rem;
-        }
-
         .pull-quote p {
             font-size: 1.1rem;
+        }
+
+        .series-nav {
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
         }
     }
 </style>
@@ -412,152 +384,129 @@ title: Cognitive Stability Under Stress
         <div class="meta">
             <span class="category">Research Series</span>
             <span>•</span>
-            <span>Neuroadaptive Systems</span>
+            <span>Post 2 of 2</span>
         </div>
-        <h1>Neuroplasticity Training for Space Adaptation</h1>
-        <p class="subtitle">From Passive Adaptation to Active Cognitive Engineering</p>
+        <h1>Cognitive Stability Under Stress</h1>
+        <p class="subtitle">Neuroadaptive Training in Extreme Environments</p>
     </header>
 
     <article class="content">
+        <p class="lead">
+            Adaptation is only the beginning. Once the brain recalibrates to a new gravitational environment, the next challenge emerges: maintaining cognitive stability under sustained physiological and psychological stress.
+        </p>
 
-        <!-- Post 1 -->
-        <section class="post-section">
-            <div class="post-header">
-                <span class="post-label">Post 1</span>
-                <h2 class="post-title">Training Neuroplasticity for Space Adaptation</h2>
-                <p class="post-subtitle">Engineering the brain's adaptive capacity for extreme environments</p>
+        <p>
+            Extreme environments — whether <strong>orbital stations</strong>, <strong>lunar bases</strong>, <strong>Antarctic research facilities</strong>, or confined operational systems — place continuous strain on the human stress-response system. These conditions trigger a cascade of neurobiological changes that can compromise operational effectiveness.
+        </p>
+
+        <div class="stress-grid">
+            <div class="stress-item">
+                <h4>Endocrine Dysregulation</h4>
+                <p>Elevated cortisol levels altering decision thresholds and risk assessment</p>
             </div>
-
-            <p class="lead">
-                Space is not simply a new destination for the human body — it is a new environment for the human brain.
-            </p>
-
-            <p>
-                When astronauts enter microgravity, the nervous system is forced into rapid recalibration. The <strong>vestibular system</strong>, which evolved under constant gravitational pull, suddenly receives signals that no longer match expectation. Visual cues conflict with internal balance information. Spatial orientation becomes unreliable. Reaction timing shifts. Even decision-making patterns can subtly change during the adaptation window.
-            </p>
-
-            <p>
-                At KinKinetics, one of our research teams is focused on understanding and accelerating this adaptive process through <strong>structured neuroplasticity training</strong>. Rather than treating adaptation as something that passively unfolds over time, we approach it as a trainable neurobiological capability. Neuroplasticity — the brain's ability to reorganize neural pathways in response to environmental change — becomes an operational variable that can be shaped, strengthened, and optimized before and during mission deployment.
-            </p>
-
-            <div class="pull-quote">
-                <p>Adaptive cognition is infrastructure — as fundamental to mission success as propulsion systems or life support.</p>
+            <div class="stress-item">
+                <h4>Autonomic Variability</h4>
+                <p>Heart rate variability disruption affecting cognitive resource allocation</p>
             </div>
-
-            <p>
-                Our work centers on <strong>vestibular-cognitive recalibration protocols</strong> designed specifically for extreme environments such as long-duration space missions, lunar habitats, and Mars transit scenarios. These protocols incorporate controlled sensory mismatch tasks that challenge the brain to reweight conflicting signals more efficiently.
-            </p>
-
-            <div class="protocol-grid">
-                <div class="protocol-item">
-                    <h4>Adaptive Inhibitory Control</h4>
-                    <p>Exercises that strengthen suppression of conflicting sensory signals under time pressure</p>
-                </div>
-                <div class="protocol-item">
-                    <h4>Spatial Evidence Accumulation</h4>
-                    <p>Tasks requiring integration of ambiguous spatial cues to support orientation recovery</p>
-                </div>
-                <div class="protocol-item">
-                    <h4>Executive Function Paradigms</h4>
-                    <p>Time-pressured decision architectures that simulate operational uncertainty</p>
-                </div>
-                <div class="protocol-item">
-                    <h4>Sensorimotor Recalibration</h4>
-                    <p>Coordinated motor-cognitive tasks that accelerate neural pathway reorganization</p>
-                </div>
+            <div class="stress-item">
+                <h4>Circadian Disruption</h4>
+                <p>Sleep fragmentation degrading executive function and reaction stability</p>
             </div>
-
-            <p>
-                The goal is to reduce the lag between environmental change and cognitive stabilization. Traditional astronaut training emphasizes physical conditioning and technical simulation. While these remain critical, they do not directly train the neural mechanisms responsible for sensory integration and executive stability under altered gravity.
-            </p>
-
-            <div class="comparison">
-                <div class="comparison-block traditional">
-                    <h3>Traditional Training</h3>
-                    <ul>
-                        <li>Physical conditioning</li>
-                        <li>Technical simulation</li>
-                        <li>Emergency response rehearsal</li>
-                    </ul>
-                </div>
-                <div class="comparison-block neuroadaptive">
-                    <h3>Neuroplasticity Layer</h3>
-                    <ul>
-                        <li>Vestibular-cognitive recalibration</li>
-                        <li>Sensory reweighting efficiency</li>
-                        <li>Executive stability under mismatch</li>
-                    </ul>
-                </div>
+            <div class="stress-item">
+                <h4>Social Deprivation</h4>
+                <p>Isolation-induced shifts in emotional regulation and team coordination</p>
             </div>
-
-            <p>
-                By targeting these mechanisms directly, neuroplasticity training becomes a <strong>proactive strategy</strong> for improving mission safety and performance reliability. Space exploration is entering an era of longer missions and greater autonomy. As communication delays increase and operational decisions become more self-contained, the cost of cognitive instability rises.
-            </p>
-
-            <div class="conclusion">
-                <p>
-                    Training the brain to adapt efficiently is not an enhancement. It is a necessity.
-                </p>
-            </div>
-        </section>
-
-        <!-- Post 2 -->
-        <section class="post-section">
-            <div class="post-header">
-                <span class="post-label">Post 2</span>
-                <h2 class="post-title">Cognitive Stability Under Stress</h2>
-                <p class="post-subtitle">Neuroadaptive training in extreme environments</p>
-            </div>
-
-            <p class="lead">
-                Adaptation is only the beginning. Once the brain recalibrates to a new gravitational environment, the next challenge emerges: maintaining cognitive stability under sustained physiological and psychological stress.
-            </p>
-
-            <p>
-                Extreme environments — whether orbital stations, lunar bases, Antarctic research facilities, or confined operational systems — place continuous strain on the human stress-response system. <strong>Elevated cortisol levels</strong>, autonomic variability, sleep disruption, and social isolation can gradually shift decision thresholds. Reaction speed may fluctuate. Risk perception can drift. Executive control can weaken under accumulated load. These changes are often subtle, but in high-stakes contexts, even minor deviations matter.
-            </p>
-
-            <p>
-                At KinKinetics, our research extends beyond adaptation toward the development of <strong>neuroadaptive cognitive protocols</strong> that integrate physiological monitoring with dynamic training systems. We are building frameworks that detect cognitive strain signatures in real time and adjust task parameters accordingly. Instead of static drills, our approach relies on adaptive feedback loops that reinforce stable decision architectures under fluctuating internal states.
-            </p>
-
-            <div class="key-points">
-                <h3>System Components</h3>
-                <ul>
-                    <li>Real-time physiological monitoring (HRV, cortisol markers, sleep quality)</li>
-                    <li>Dynamic task parameter adjustment based on cognitive load indices</li>
-                    <li>Decision-making under uncertainty with adaptive difficulty scaling</li>
-                    <li>Inhibitory control challenges under simulated stress conditions</li>
-                    <li>Evidence accumulation paradigms modeling operational demands</li>
-                </ul>
-            </div>
-
-            <p>
-                By aligning cognitive training with physiological state, we aim to prevent the gradual drift that can occur during long-duration missions. This approach is rooted in the <strong>KinKinetics Neuroadaptive Efficiency framework</strong>, which treats cognitive resilience as measurable and trainable. Neuroplasticity is not simply about change — it is about maintaining coherence while adapting.
-            </p>
-
-            <div class="framework-box">
-                <h3>Core Principle</h3>
-                <p>
-                    In environments where autonomy is essential and support from Earth is delayed, cognitive stability becomes a core safety mechanism. The adaptive brain must remain not only flexible, but coherent.
-                </p>
-            </div>
-
-            <p>
-                Although our research is driven by space applications, the implications extend to Earth-based extreme contexts, including high-risk medical environments, defense operations, and ageing populations experiencing vestibular decline. The same neural principles that govern adaptation in orbit also govern resilience under pressure on Earth.
-            </p>
-
-            <div class="conclusion">
-                <p>
-                    At KinKinetics, we are working to ensure that as human exploration advances into harsher environments, the brain remains not only adaptable, but stable.
-                </p>
-            </div>
-        </section>
-
-        <div class="series-nav">
-            <span>Neuroadaptive Systems Series</span>
-            <span>Research Division • KinKinetics</span>
         </div>
 
+        <p>
+            The consequences manifest operationally: reaction speed fluctuates, risk perception drifts, and executive control weakens under accumulated load. These changes are often subtle, but in high-stakes contexts, even minor deviations matter.
+        </p>
+
+        <div class="pull-quote">
+            <p>Cognitive stability becomes a core safety mechanism when autonomy is essential and support from Earth is delayed.</p>
+        </div>
+
+        <p>
+            At KinKinetics, our research extends beyond adaptation toward the development of <strong>neuroadaptive cognitive protocols</strong> that integrate physiological monitoring with dynamic training systems. We are building frameworks that detect cognitive strain signatures in real time and adjust task parameters accordingly.
+        </p>
+
+        <p>
+            Instead of static drills, our approach relies on <strong>adaptive feedback loops</strong> that reinforce stable decision architectures under fluctuating internal states.
+        </p>
+
+        <div class="system-components">
+            <h3>System Architecture</h3>
+            <div class="component-list">
+                <div class="component-item">
+                    <span class="component-icon">→</span>
+                    <div class="component-text">
+                        <h4>Real-Time Physiological Monitoring</h4>
+                        <p>HRV, cortisol markers, sleep architecture, and autonomic tone</p>
+                    </div>
+                </div>
+                <div class="component-item">
+                    <span class="component-icon">→</span>
+                    <div class="component-text">
+                        <h4>Cognitive Strain Detection</h4>
+                        <p>Algorithmic identification of performance degradation signatures</p>
+                    </div>
+                </div>
+                <div class="component-item">
+                    <span class="component-icon">→</span>
+                    <div class="component-text">
+                        <h4>Dynamic Task Adjustment</h4>
+                        <p>Adaptive difficulty scaling based on current cognitive capacity</p>
+                    </div>
+                </div>
+                <div class="component-item">
+                    <span class="component-icon">→</span>
+                    <div class="component-text">
+                        <h4>Stability Reinforcement</h4>
+                        <p>Targeted exercises that strengthen decision architecture under stress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            These systems incorporate decision-making tasks under uncertainty, inhibitory control challenges under simulated stress, and evidence accumulation paradigms that model real-world operational demands. By aligning cognitive training with physiological state, we aim to prevent the gradual drift that can occur during long-duration missions.
+        </p>
+
+        <div class="framework-box">
+            <h3>Core Principle</h3>
+            <p>
+                This approach is rooted in the KinKinetics Neuroadaptive Efficiency framework, which treats cognitive resilience as measurable and trainable. Neuroplasticity is not simply about change — it is about maintaining coherence while adapting.
+            </p>
+        </div>
+
+        <p>
+            Although our research is driven by space applications, the implications extend to Earth-based extreme contexts. The same neural principles that govern adaptation in orbit also govern resilience under pressure on Earth.
+        </p>
+
+        <div class="applications">
+            <h3>Terrestrial Applications</h3>
+            <div class="app-grid">
+                <div class="app-item">
+                    <h4>High-Risk Medical</h4>
+                </div>
+                <div class="app-item">
+                    <h4>Defense Operations</h4>
+                </div>
+                <div class="app-item">
+                    <h4>Vestibular Decline</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <p>
+                At KinKinetics, we are working to ensure that as human exploration advances into harsher environments, the brain remains not only adaptable, but stable.
+            </p>
+        </div>
+
+        <div class="series-nav">
+            <a href="{{ site.baseurl }}/blog/neuroplasticity-training">← Post 1: Training Neuroplasticity</a>
+            <span>Neuroadaptive Systems Series</span>
+        </div>
     </article>
 </main>
