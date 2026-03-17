@@ -1,0 +1,398 @@
+---
+layout: page
+title: ML-Performance-Prediction
+---
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        line-height: 1.6;
+    }
+
+    /* Simple Header with Logo */
+    .site-header {
+        padding: 24px 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #f8fafc;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .brand-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.01em;
+    }
+
+    .back-btn {
+        margin-left: auto;
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .back-btn:hover {
+        color: #fbbf24;
+    }
+
+    /* Main Content */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    /* Article Header */
+    .article-header {
+        margin-bottom: 40px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 0.8rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .category {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #f8fafc;
+        line-height: 1.3;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        color: #94a3b8;
+        font-weight: 400;
+    }
+
+    /* Content */
+    .content {
+        font-size: 1rem;
+        color: #cbd5e1;
+    }
+
+    .content p {
+        margin-bottom: 20px;
+    }
+
+    .lead {
+        font-size: 1.05rem;
+        color: #f1f5f9;
+        font-weight: 500;
+        margin-bottom: 28px;
+    }
+
+    .content strong {
+        color: #fbbf24;
+        font-weight: 600;
+    }
+
+    /* Images - Clean and proportional */
+    .article-image {
+        margin: 32px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .article-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+        background: rgba(30, 41, 59, 0.5);
+        display: block;
+    }
+
+    .image-caption {
+        padding: 12px 16px;
+        background: rgba(30, 41, 59, 0.8);
+        font-size: 0.8rem;
+        color: #94a3b8;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Key Points Box */
+    .key-points {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .key-points h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .key-points ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .key-points li {
+        padding: 6px 0;
+        padding-left: 16px;
+        position: relative;
+        color: #e2e8f0;
+        font-size: 0.95rem;
+    }
+
+    .key-points li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: #fbbf24;
+    }
+
+    /* Science Highlight Box */
+    .science-box {
+        background: rgba(30, 41, 59, 0.4);
+        border-left: 3px solid #fbbf24;
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 0 6px 6px 0;
+    }
+
+    .science-box h3 {
+        font-size: 0.8rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .science-box p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #e2e8f0;
+        font-style: italic;
+    }
+
+    /* Model Box */
+    .model-box {
+        background: rgba(30, 41, 59, 0.4);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        padding: 20px 24px;
+        margin: 32px 0;
+        border-radius: 6px;
+    }
+
+    .model-box h3 {
+        font-size: 0.85rem;
+        color: #fbbf24;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .model-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .model-box li {
+        padding: 8px 0;
+        padding-left: 20px;
+        position: relative;
+        color: #cbd5e1;
+        font-size: 0.9rem;
+    }
+
+    .model-box li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #fbbf24;
+    }
+
+    /* Conclusion */
+    .conclusion {
+        margin-top: 40px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .conclusion p {
+        font-style: italic;
+        color: #94a3b8;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+        .site-header {
+            padding: 20px 24px;
+        }
+
+        .container {
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<!-- Header -->
+<header class="site-header">
+    <div class="header-content">
+        <a href="{{ site.baseurl }}/" class="logo-link">
+            <img src="{{ site.baseurl }}/img/kinkinetics.png" alt="KinKinetics" class="logo">
+            <span class="brand-name">KinKinetics</span>
+        </a>
+        <a href="{{ site.baseurl }}/" class="back-btn">← Back</a>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+    <header class="article-header">
+        <div class="meta">
+            <span class="category">Research</span>
+            <span>•</span>
+            <span>March 2025</span>
+        </div>
+        <h1>Machine Learning Models for Performance Prediction</h1>
+        <p class="subtitle">AI-Driven Crew Health Monitoring in Microgravity</p>
+    </header>
+
+    <article class="content">
+        <p class="lead">
+            At <strong>KinKinetics</strong>, we leverage cutting-edge machine learning architectures to predict and safeguard astronaut performance in microgravity environments. By integrating multi-modal biomarker analysis with adaptive AI systems, we engineer predictive models that anticipate cognitive decline, biomechanical degradation, and health anomalies before they compromise mission-critical tasks.
+        </p>
+
+        <p>
+            Our research draws from <strong>NASA</strong>, <strong>CSA</strong>, and leading space medicine institutions to develop ML classifiers capable of identifying at-risk crew members through pre-screen performance data, real-time telemetry, and synthetic biomechanical modeling. These systems represent a paradigm shift from reactive space medicine to predictive, autonomous health management.
+        </p>
+
+        <div class="key-points">
+            <h3>Core ML Applications</h3>
+            <ul>
+                <li>Cognitive impairment prediction using Gaussian Naive Bayes, SVM, and Neural Networks</li>
+                <li>Biomechanical joint loading prediction with synthetic dataset generation</li>
+                <li>Prognostics and Health Management (PHM) with individualized "health fingerprints"</li>
+                <li>Real-time telemetric health AI for cardiovascular and vestibular monitoring</li>
+            </ul>
+        </div>
+
+        <p>
+            One of the most significant applications involves predicting <strong>radiation-induced cognitive impairment</strong>. Matar et al. developed ML classifiers trained on prescreen performance scores as multidimensional input features, implementing cumulative distribution functions to establish impairment thresholds. These algorithms successfully identified rats with higher tendencies for impairment after Galactic Cosmic Radiation exposure, with better prediction accuracy for specific ion types such as <strong>56Fe</strong>.
+        </p>
+
+        <div class="model-box">
+            <h3>Cognitive Impairment Prediction Methodology</h3>
+            <ul>
+                <li>Prescreen performance scores as multidimensional input features</li>
+                <li>Cumulative distribution functions (CDF) for impairment threshold establishment</li>
+                <li>Training on control group data to identify susceptible individuals</li>
+                <li>Prediction of astronaut impairment in specific tasks before spaceflight</li>
+            </ul>
+        </div>
+
+        <p>
+            A <strong>2025 study</strong> introduced innovative ML approaches for investigating joint loading in astronaut biomechanics under varying gravity conditions. This research addresses the challenge of scarce biomechanical data by generating synthetic datasets to train machine learning models that predict human movement under different gravitational conditions.
+        </p>
+
+        <div class="model-box">
+            <h3>Biomechanical Prediction Workflow</h3>
+            <ul>
+                <li>Data collection of kinetic and kinematic inputs, gravity levels, and demographic information</li>
+                <li>Processing through normalization, feature selection, and missing entry handling</li>
+                <li>Classification of bone health into "healthy" or "at-risk" categories</li>
+                <li>Iterative parameter adjustments to improve accuracy</li>
+                <li>Validation against unseen datasets to ensure generalizability</li>
+                <li>Personalized exercise recommendations (treadmill, cycling, resistive training)</li>
+            </ul>
+        </div>
+
+        <p>
+            The <strong>Canadian Space Agency</strong> and <strong>NASA</strong> have been developing <strong>PHM-based technologies</strong> augmented with predictive diagnostics capability for exploration-class missions. These systems recognize that every crew member is unique, requiring development of individualized "fingerprints" encompassing medical history, genetic predisposition, baseline health assessments, and operational/emotional contexts.
+        </p>
+
+        <div class="science-box">
+            <h3>PHM Core Capabilities</h3>
+            <p>
+                Real-time health assessment comparing current status against individual baselines; predictive analytics detecting negative trends and isolating abnormal dynamics; anomaly detection using statistical techniques and machine learning methods; data-driven approaches for large-scale health data processing.
+            </p>
+        </science-box>
+
+        <p>
+            Recent implementations like the <strong>Ax-4 mission</strong> have deployed <strong>Telemetric Health AI (TESH)</strong> systems that monitor cardiovascular and vestibular health in real-time. These systems collect data on heart rate and heart rate variability, blood oxygen (SpO₂), stress levels, sleep patterns, skin temperature, step count, and respiration rate. The AI-assisted analysis enables early detection of cardiovascular or vestibular issues, informing countermeasures for long-duration missions.
+        </p>
+
+        <div class="key-points">
+            <h3>TESH Monitoring Parameters</h3>
+            <ul>
+                <li>Heart rate and heart rate variability</li>
+                <li>Blood oxygen (SpO₂) levels</li>
+                <li>Stress level indicators</li>
+                <li>Sleep patterns and skin temperature</li>
+                <li>Step count and respiration rate</li>
+            </ul>
+        </div>
+
+        <p>
+            The interdisciplinary fusion of <strong>machine learning</strong>, <strong>space medicine</strong>, and <strong>behavioral science</strong> positions KinKinetics at the forefront of predictive crew health technology. We don't just monitor—we anticipate the physiological and cognitive mechanisms behind performance degradation to deliver meaningful, timely, and mission-critical interventions.
+        </p>
+
+        <div class="conclusion">
+            <p>
+                Machine learning performance prediction is not merely about data analysis; it is about understanding the complex interplay of radiation exposure, microgravity adaptation, and individual variability to engineer systems that preserve human capability when it matters most. This is the foundation upon which KinKinetics builds the future of autonomous space health management.
+            </p>
+        </div>
+    </article>
+</main>
