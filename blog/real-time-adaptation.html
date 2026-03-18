@@ -1,104 +1,476 @@
 ---
 layout: page
-title: 21st Reinventing Space Conference
+title: The Next Frontier - Biometric Monitoring in Microgravity
 ---
 
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f8f9fa;
         color: #333;
+        line-height: 1.6;
     }
 
-    h2 {
-        font-family: "Arial", sans-serif;
-        font-size: 2.5rem;
-        font-weight: bold;
-        color: #0056b3; /* Slightly dark blue for the title */
+    .blog-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: #ffffff;
+    }
+
+    .blog-header {
+        text-align: center;
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        border-bottom: 3px solid #0056b3;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        color: #0056b3;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .meta-info {
+        font-size: 0.9rem;
+        color: #6c757d;
         margin-top: 20px;
     }
 
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #0056b3;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e9ecef;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #34495e;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
     p {
-        font-family: "Arial", sans-serif;
-        font-size: 1rem;
+        font-size: 1.05rem;
         line-height: 1.8;
-        text-align: justify; /* Justified text for better readability */
-        margin: 20px auto;
-        max-width: 800px; /* Restrict content width for better readability */
+        text-align: justify;
+        margin-bottom: 20px;
+        color: #444;
     }
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    ul, ol {
+        margin-bottom: 20px;
+        padding-left: 30px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        line-height: 1.7;
+    }
+
+    strong {
+        color: #1a1a1a;
+        font-weight: 600;
+    }
+
+    blockquote {
+        border-left: 4px solid #0056b3;
+        padding-left: 20px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #555;
+        background-color: #f8f9fa;
         padding: 20px;
+        border-radius: 0 8px 8px 0;
     }
 
-    img {
-        margin: 20px auto;
+    .highlight-box {
+        background-color: #e8f4f8;
+        border-left: 4px solid #0056b3;
+        padding: 20px;
+        margin: 30px 0;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .highlight-box h4 {
+        margin-top: 0;
+        color: #0056b3;
+    }
+
+    .comparison {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .comparison-box {
+        padding: 20px;
         border-radius: 8px;
-        width: 100%;
-        max-width: 800px; /* Ensure images align with text width */
-        height: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a modern look */
     }
 
-    .text-muted {
-        font-weight: bold; /* Make subtitle bold as requested */
-        color: #6c757d; /* Subtle gray for subtitle text */
+    .comparison-box.traditional {
+        background-color: #f8f9fa;
+        border: 2px solid #dee2e6;
+    }
+
+    .comparison-box.predictive {
+        background-color: #e8f4f8;
+        border: 2px solid #0056b3;
+    }
+
+    .comparison-box h4 {
+        margin-top: 0;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .comparison-box.traditional h4 {
+        color: #6c757d;
+    }
+
+    .comparison-box.predictive h4 {
+        color: #0056b3;
+    }
+
+    .mission-list {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    .mission-list ul {
+        margin: 0;
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .mission-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .mission-list li:last-child {
+        border-bottom: none;
+    }
+
+    .mission-name {
+        font-weight: 600;
+        color: #0056b3;
+    }
+
+    .references {
+        margin-top: 60px;
+        padding-top: 30px;
+        border-top: 3px solid #e9ecef;
+        font-size: 0.9rem;
+    }
+
+    .references h2 {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    .references ol {
+        padding-left: 20px;
+    }
+
+    .references li {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .references a {
+        color: #0056b3;
+        text-decoration: none;
+        word-break: break-all;
+    }
+
+    .references a:hover {
+        text-decoration: underline;
+    }
+
+    .disclaimer {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        color: #6c757d;
+        font-style: italic;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .comparison {
+            grid-template-columns: 1fr;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .blog-container {
+            padding: 20px 15px;
+        }
     }
 </style>
 
-<section id="project-details">
-    <div class="container">
-        <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>21st Reinventing Space Conference</h2>
-                <p class="text-muted">Hosted by the British Interplanetary Society at the Royal Aeronautical Society, Mayfair.</p>
+<section id="blog-post">
+    <div class="blog-container">
+        
+        <!-- Blog Header -->
+        <div class="blog-header">
+            <h1>The Next Frontier: How Biometric Monitoring is Revolutionizing Human Health in Microgravity</h1>
+            <p class="subtitle">From passive data collection to predictive health intelligence—new technologies are transforming how we safeguard astronauts on long-duration missions</p>
+            <div class="meta-info">
+                <span>Space Medicine & Technology</span> • <span>March 2026</span>
             </div>
         </div>
 
-        <!-- First Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/reinventing1.jpg" alt="Reinventing Space Gala Dinner">
-                <p>
-                    KinKinetics had an incredible experience at the <strong>21st Reinventing Space Conference</strong>, hosted by the British Interplanetary Society at the Royal Aeronautical Society in Mayfair. The three-day event was packed with engaging sessions, including the prestigious Gala Dinner and Arthur Awards. The highlight of the conference for us was participating in hands-on activities like the Soyuz controller demo, which allowed attendees to practice docking—a unique and fun experience!
-                </p>
+        <!-- Introduction -->
+        <h2>Introduction: The Silent Transformation of Space Medicine</h2>
+        
+        <p>
+            As humanity prepares for its most ambitious space endeavors—Artemis lunar missions, Mars expeditions, and the commercialization of orbital habitats—the paradigm of astronaut health monitoring is undergoing a fundamental shift. What began as periodic vital sign checks using bulky medical equipment has evolved into continuous, intelligent biometric surveillance that anticipates health issues before they manifest.
+        </p>
+        
+        <p>
+            The space medicine market, valued at $1.33 billion in 2025 and projected to reach $2.14 billion by 2029, reflects this transformation. But the real story isn't in the numbers—it's in how emerging technologies are redefining the relationship between human physiology and the hostile environment of microgravity.
+        </p>
+
+        <!-- Current State -->
+        <h2>The Current State: From Bulky Devices to Invisible Integration</h2>
+        
+        <h3>Legacy Systems and Their Limitations</h3>
+        
+        <p>
+            Traditional astronaut health monitoring required deliberate interruption of daily activities. Astronauts needed to stop their tasks, attach multiple sensors, and remain stationary while measurements were taken. The Canadian Space Agency's Bio-Monitor, launched in 2018, represented an early breakthrough—a smart shirt system that continuously tracked heart rate, blood pressure, breathing patterns, skin temperature, and blood oxygen saturation without disrupting workflows.
+        </p>
+        
+        <p>
+            However, even these "wearable" systems required conscious donning, battery management, and data synchronization. For missions extending months or years, such friction becomes unsustainable.
+        </p>
+
+        <h3>The New Wave: Commercial-Grade Precision in Orbit</h3>
+        
+        <p>
+            Recent missions have demonstrated that consumer wearable technology, when properly validated, can meet spaceflight standards. In June 2025, astronauts aboard the International Space Station began using Oura rings—commercially available devices—to track sleep quality, heart rate variability, body temperature, and menstrual cycles. What makes this deployment significant isn't the hardware itself, but the architecture: edge computing processes data locally, enabling real-time decision-making without ground support.
+        </p>
+        
+        <p>
+            This shift toward autonomous health assessment addresses a critical constraint for deep space missions: communication delays. When a Mars-bound crew faces a 20-minute signal lag, waiting for Earth-based medical guidance isn't viable. Edge-enabled biometric systems empower crew members to evaluate their own readiness for critical tasks, from spacewalks to landing procedures.
+        </p>
+
+        <!-- Emerging Possibilities -->
+        <h2>Emerging Possibilities: Five Transformative Frontiers</h2>
+
+        <h3>1. Multimodal Flexible Wearables: The "Second Skin" Revolution</h3>
+        
+        <p>
+            Current research emphasizes flexible electronics that conform to body contours while capturing diverse physiological signals simultaneously. A comprehensive review published in <em>Wearable Electronics</em> (2025) highlights systems integrating inertial measurement units, biosignal electrodes, and environmental detectors into single, stretchable platforms.
+        </p>
+
+        <div class="highlight-box">
+            <h4>The Innovation</h4>
+            <p style="margin-bottom: 0;">These aren't just sensors—they're integrated health ecosystems. Imagine a garment that simultaneously tracks:</p>
+            <ul style="margin-bottom: 0;">
+                <li>Cardiopulmonary function through embedded ECG and impedance pneumography</li>
+                <li>Neuromuscular performance via surface electromyography</li>
+                <li>Circadian rhythm regulation through continuous core temperature monitoring</li>
+                <li>Environmental exposure (radiation, CO₂ levels, thermal fluctuations)</li>
+            </ul>
+        </div>
+
+        <p>
+            The technical barriers remain significant: device reliability under combined space stressors (radiation, vacuum, temperature extremes), secure data management in confined spacecraft environments, and the computational challenge of fusing heterogeneous bio-signals with temporal-spatial synchronization.
+        </p>
+
+        <p>
+            <strong>The Breakthrough Potential:</strong> Carré Technologies, developer of the ISS Bio-Monitor, is currently contracted by the Canadian Space Agency to create next-generation wearable systems for the Lunar Gateway. With $800,000 in funding and a completion target of May 2025, this project aims to develop "smart and easy-to-use systems that fit into astronauts' daily routines during missions in the lunar environment."
+        </p>
+
+        <h3>2. AI-Driven Predictive Diagnostics: From Monitoring to Forecasting</h3>
+        
+        <p>
+            The most profound shift in space biomedicine is the transition from reactive monitoring to predictive health intelligence. A 2025 review in <em>Life Sciences in Space Research</em> proposes a framework for next-generation systems that integrate "minimal yet strategic physiological sensors, machine learning-driven predictive diagnostics, efficient data compression, and adaptive sensing."
+        </p>
+
+        <h4>How This Changes Everything</h4>
+        
+        <div class="comparison">
+            <div class="comparison-box traditional">
+                <h4>Traditional Approach</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">Sensor detects elevated heart rate → Alert sent to ground → Medical officer reviews → Recommendation transmitted → Crew responds</p>
+            </div>
+            <div class="comparison-box predictive">
+                <h4>Predictive Approach</h4>
+                <p style="font-size: 0.95rem; margin-bottom: 0;">AI analyzes patterns across multiple biometric streams → Identifies subtle precursors to cardiovascular deconditioning → Automatically adjusts exercise protocols and nutritional interventions → Prevents acute episode entirely</p>
             </div>
         </div>
 
-        <!-- Second Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/reinventing2.jpg" alt="Voice of the Next Generation Workshop">
-                <p>
-                    One of the most inspiring aspects of the event was being part of the <strong>"Voice of the Next Generation"</strong> workshop. This session brought together talented young professionals and students to discuss the future of the UK space sector and sustainable space management. Representing KinKinetics, we had the chance to collaborate with like-minded peers and contribute fresh ideas to shape the next chapter of space exploration.
-                </p>
-            </div>
+        <p>
+            NASA's research into AI-powered clinical decision support systems (CDSS) exemplifies this direction. These systems would receive text, voice, visual images, video, biometric continuous monitoring data, and laboratory diagnostics to produce real-time differential diagnoses while conversing with crew medical officers. For conditions like Spaceflight-Associated Neuro-Ocular Syndrome (SANS)—which affects vision during long-duration flights—AI frameworks can detect pathophysiological patterns through deep learning analysis of ocular measurements, enabling intervention before irreversible damage occurs.
+        </p>
+
+        <h3>3. The EXPAND Database: Collective Intelligence from Individual Missions</h3>
+        
+        <p>
+            The Translational Research Institute for Space Health (TRISH) has pioneered a revolutionary approach to space health data through the EXPAND database. Unlike fragmented mission-specific datasets, EXPAND centralizes biomedical data from commercial spaceflight participants across multiple missions.
+        </p>
+
+        <div class="mission-list">
+            <ul>
+                <li><span class="mission-name">Inspiration4 (2021):</span> Cognition, posture, ultrasound, telemetry, DNA/RNA sequences, Apple Watch data</li>
+                <li><span class="mission-name">Axiom-1 through Axiom-3 (2022–2024):</span> Cognition, posture, motion, space omics, field tests, Garmin and BioButton wearables</li>
+                <li><span class="mission-name">Polaris Dawn (2024):</span> Comprehensive suite including SANS surveillance, radiation measurement, continuous glucose monitoring</li>
+                <li><span class="mission-name">Fram2 (2025):</span> First polar-orbit human spaceflight—cognitive performance, radiation exposure, and genomic data</li>
+            </ul>
         </div>
 
-        <!-- Third Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/reinventing3.jpg" alt="Team Collaboration at Reinventing Space">
-                <p>
-                    In a dynamic and collaborative environment, our team created a well-received presentation within just one hour, showcasing innovative solutions to challenges in near-Earth space management. Working alongside visionary young thinkers like Ethan Jones, Robert Lynn, Harsimret Singh Dhami, George L., Emmy (Elif) Keve, MSc, MEng, PhD Candidate, and Michele Marino, KinKinetics demonstrated its commitment to advancing sustainability in space exploration.
-                </p>
-            </div>
+        <p>
+            This aggregation enables longitudinal studies impossible with isolated datasets. Researchers can now identify patterns across diverse mission profiles, spacecraft environments, and crew demographics.
+        </p>
+
+        <p>
+            <strong>The Strategic Value:</strong> As commercial space travel expands, EXPAND transforms individual mission data into collective intelligence, refining predictive models and countermeasures for future deep-space missions.
+        </p>
+
+        <h3>4. Specialized Biometric Interfaces: Beyond Traditional Vital Signs</h3>
+        
+        <p>
+            The frontier of biometric monitoring extends into domains previously considered difficult to track continuously:
+        </p>
+
+        <ul>
+            <li><strong>Smart Contact Lenses for Ocular Health:</strong> Embedded micro-sensors measure intraocular pressure, critical for detecting SANS. The Mojo Lens and Sensimed Triggerfish represent early implementations, providing non-invasive monitoring of fluid shifts that threaten vision during long-duration flights.</li>
+            
+            <li><strong>Continuous Glucose Monitoring:</strong> The Dexcom G6 CGM, deployed on Polaris Dawn, tracks metabolic changes in real-time, informing nutritional adjustments and revealing how microgravity affects glucose regulation—insights relevant to both astronaut performance and terrestrial diabetes management.</li>
+            
+            <li><strong>3D Portable Ultrasound:</strong> The Butterfly iQ+ enables in-orbit imaging of ocular structures and fluid distribution, transforming diagnostic capabilities without requiring bulky medical equipment.</li>
+            
+            <li><strong>Personal CO₂ Monitors:</strong> Specialized sensors attached to clothing monitor immediate atmospheric conditions, addressing the risk of carbon dioxide pockets that can cause headaches, dizziness, and cognitive impairment in enclosed spacecraft environments.</li>
+        </ul>
+
+        <h3>5. Analog Mission Validation: Testing on Earth for Performance in Space</h3>
+        
+        <p>
+            Before deployment in orbit, next-generation biometric systems undergo rigorous validation in terrestrial environments that simulate space stressors. The TREK-I mission (August 2024) exemplifies this approach: researchers trekked to Gangbal Lake in the Northern Himalayas (3,575m elevation) wearing advanced biosensors to examine physiological and cognitive responses to reduced oxygen and environmental stress.
+        </p>
+
+        <p>
+            <strong>Devices Tested:</strong> Garmin and Samsung watches for cardiovascular and activity monitoring; Atmotube sensors for air quality and atmospheric tracking; PineTime and Android watches for open-source biometric validation.
+        </p>
+
+        <p>
+            This methodology ensures that wearable technologies can perform under authentic stress conditions before mission-critical deployment, reducing risk while accelerating innovation cycles.
+        </p>
+
+        <!-- Deep Space Imperative -->
+        <h2>The Deep Space Imperative: Why This Matters Now</h2>
+        
+        <p>
+            As missions extend beyond low Earth orbit, three factors make advanced biometric monitoring non-negotiable:
+        </p>
+
+        <ol>
+            <li><strong>Communication Latency:</strong> Mars missions face 4–24 minute signal delays. Real-time ground support becomes impossible. Autonomous, AI-enhanced biometric systems must provide immediate diagnostic and intervention guidance.</li>
+            
+            <li><strong>Mission Duration:</strong> Months-long transits and surface stays accumulate physiological degradation. Cardiovascular deconditioning, bone density loss, muscle atrophy, and vision impairment develop gradually. Continuous monitoring enables early intervention, before cumulative damage compromises mission objectives or crew safety.</li>
+            
+            <li><strong>Crew Autonomy:</strong> Deep space crews must function as self-sufficient medical units. The integration of wearable sensors, edge computing, and AI diagnostic support transforms individual astronauts into sophisticated health monitoring nodes capable of maintaining collective wellbeing without terrestrial oversight.</li>
+        </ol>
+
+        <!-- Terrestrial Spillover -->
+        <h2>Terrestrial Spillover: Space Technology for Earthly Health</h2>
+        
+        <p>
+            The innovations developed for microgravity biometric monitoring have immediate applications for terrestrial healthcare:
+        </p>
+
+        <ul>
+            <li><strong>Remote Patient Monitoring:</strong> The Bio-Monitor's commercial version, Hexoskin, is already deployed for studying breathing disorders, cardiac and pulmonary diseases, sleep disorders, and pediatric conditions.</li>
+            
+            <li><strong>Extreme Environment Workers:</strong> Mining, industrial sites, and isolated research stations benefit from continuous health surveillance originally designed for astronauts.</li>
+            
+            <li><strong>Rural Healthcare:</strong> The same autonomous diagnostic capabilities that serve Mars-bound crews can support patients in medically underserved regions, where specialist consultation is unavailable.</li>
+            
+            <li><strong>Chronic Disease Management:</strong> Continuous glucose monitoring and predictive analytics developed for spaceflight metabolic tracking translate directly to diabetes and metabolic syndrome management on Earth.</li>
+        </ul>
+
+        <!-- Conclusion -->
+        <h2>Conclusion: The Biometric Horizon</h2>
+        
+        <p>
+            Biometric monitoring in microgravity is transitioning from a support function to a mission-critical capability. The convergence of flexible wearable technology, edge computing, artificial intelligence, and collective data intelligence is creating health surveillance systems that don't just record astronaut status—they actively protect it.
+        </p>
+
+        <p>
+            As Carré Technologies develops Lunar Gateway systems, as EXPAND accumulates multi-mission datasets, and as AI diagnostic frameworks mature, we are witnessing the emergence of a new paradigm: <strong>predictive space medicine</strong>. In this paradigm, health issues are anticipated and prevented rather than treated, crew autonomy is enhanced rather than compromised by distance from Earth, and the boundary between human physiology and technological support becomes increasingly seamless.
+        </p>
+
+        <blockquote>
+            The astronauts who first walk on Mars will likely do so wearing biometric systems that would seem futuristic to today's ISS crews—systems that don't just monitor their bodies, but understand them, anticipate their needs, and safeguard their health across the vast distances of deep space.
+        </blockquote>
+
+        <!-- References -->
+        <div class="references">
+            <h2>References</h2>
+            <ol>
+                <li>Canadian Space Agency. "Bio-Monitor: Keeping an eye on astronauts' vital signs." <a href="https://www.asc-csa.gc.ca/eng/sciences/bio-monitor.asp">https://www.asc-csa.gc.ca/eng/sciences/bio-monitor.asp</a></li>
+                
+                <li>Gupta, R. et al. (2025). "Advancements in health monitoring technologies for astronauts in deep space missions: A Review." <em>Life Sci Space Res</em>. <a href="https://pubmed.ncbi.nlm.nih.gov/41136019/">https://pubmed.ncbi.nlm.nih.gov/41136019/</a></li>
+                
+                <li>TrialX. "How Personal Health Devices and Wearables are Advancing Space Health Research." (March 2025) <a href="https://trialx.com/space-health-research-wearable-devices/">https://trialx.com/space-health-research-wearable-devices/</a></li>
+                
+                <li>SpaceQ. "Carré Technologies to Develop Wearable Health Monitoring Technology for Lunar Gateway Astronauts." (Nov 2024) <a href="https://spaceq.ca/carre-technologies-to-develop-wearable-health-monitoring-technology-for-lunar-gateway-astronauts/">https://spaceq.ca/carre-technologies-to-develop-wearable-health-monitoring-technology-for-lunar-gateway-astronauts/</a></li>
+                
+                <li>NASA. "Wearable Tech for Space Station Research." (Nov 2024) <a href="https://www.nasa.gov/missions/station/iss-research/wearable-tech-for-space-station-research/">https://www.nasa.gov/missions/station/iss-research/wearable-tech-for-space-station-research/</a></li>
+                
+                <li>Research and Markets. "Space Medicine Market Report 2025." (Oct 2025) <a href="https://supplychaindigital.com/globenewswire/3164981">https://supplychaindigital.com/globenewswire/3164981</a></li>
+                
+                <li>EurekAlert. "How flexible wearables protect astronauts' health in space." (Apr 2025) <a href="https://www.eurekalert.org/news-releases/1080373">https://www.eurekalert.org/news-releases/1080373</a></li>
+                
+                <li>NASA. "Harnessing artificial intelligence for medical diagnosis and treatment." (2024) <a href="https://ntrs.nasa.gov/api/citations/20240004315/downloads/AI%20for%20Medical%20Diagnosis%20and%20Treatment-Final.pdf">https://ntrs.nasa.gov/api/citations/20240004315/downloads/AI%20for%20Medical%20Diagnosis%20and%20Treatment-Final.pdf</a></li>
+                
+                <li>TrialX. "What is the EXPAND Database and How is it Transforming Space Health Research?" (Apr 2025) <a href="https://trialx.com/space-health-research-expand-database/">https://trialx.com/space-health-research-expand-database/</a></li>
+                
+                <li>Engineering & Technology. "ISS astronauts to be kitted out with biometric wearables to help track fitness and sleep." (Jun 2025) <a href="https://eandt.theiet.org/2025/06/05/iss-astronauts-be-kitted-biometric-wearables-help-track-fitness-and-sleep">https://eandt.theiet.org/2025/06/05/iss-astronauts-be-kitted-biometric-wearables-help-track-fitness-and-sleep</a></li>
+                
+                <li>Lee, A.G. et al. "Artificial Intelligence Frameworks to Detect and Investigate the Pathophysiology of Spaceflight Associated Neuro-Ocular Syndrome (SANS)." <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10452366/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10452366/</a></li>
+            </ol>
         </div>
 
-        <!-- Fourth Image and Description -->
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="{{ site.baseurl }}/img/portfolio/reinventing4.jpg" alt="KinKinetics and Reinventing Space">
-                <p>
-                    KinKinetics would like to extend a heartfelt thank you to <strong>Swetha Kotichintala, Joanna Hart, and Evandros Theodosiou</strong>, as well as everyone else who made this event possible. Special thanks to <strong>Mr. Gerald D. Griffin</strong> for his inspiring address. This conference was a celebration of the innovation, passion, and community that drive the future of the space sector. We are proud to be part of this vibrant and dynamic industry.
-                </p>
-            </div>
+        <div class="disclaimer">
+            This blog post synthesizes current research and emerging developments in space medicine. For mission-specific medical protocols, consult official space agency documentation.
         </div>
+
     </div>
 </section>
