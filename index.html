@@ -131,6 +131,19 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
+
+        /* Hidden blog posts */
+        .hidden-blog {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            display: none;
+        }
+
+        .hidden-blog.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 <base target="_blank">
 </head>
@@ -508,7 +521,7 @@
             </div>
         </div>
     </section>
-<!-- Blog Section -->
+
     <!-- Blog Section -->
     <section id="blogs" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -519,7 +532,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
-                <!-- Blog Post 0 -->
+                <!-- Blog Post 1: April 15, 2026 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 100ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-dark to-kk-blue flex items-center justify-center relative overflow-hidden">
                         <img src="img/spaceengg.png" alt="Research" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
@@ -539,48 +552,8 @@
                     </div>
                 </article>
 
-                <!-- Blog Post 1 -->
+                <!-- Blog Post 2: Jan 20, 2026 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 100ms;">
-                    <div class="h-48 bg-gradient-to-br from-kk-dark to-kk-blue flex items-center justify-center relative overflow-hidden">
-                        <img src="img/biometric.png" alt="Research" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-xs text-mustard-400 font-medium">Research</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-xs text-slate-500">March 15, 2025</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Biometric Monitoring in Extreme Environments</h4>
-                        <p class="text-slate-400 text-sm mb-4">New advances in real-time physiological monitoring for astronaut health management.</p>
-                        <a href="blog/biometric.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
-                    <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
-                        <img src="img/imagefor blog.png" alt="Technology" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="text-xs text-mustard-400 font-medium">Technology</span>
-                            <span class="text-slate-600">•</span>
-                            <span class="text-xs text-slate-500">March 10, 2025</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Predictive Analytics for Crew Performance</h4>
-                        <p class="text-slate-400 text-sm mb-4">Machine learning models that anticipate cognitive load before mission-critical decisions.</p>
-                        <a href="blog/ML.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
                         <img src="img/space.jpg" alt="Technology" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
                     </div>
@@ -599,7 +572,7 @@
                     </div>
                 </article>
 
-                <!-- Blog Post 4 -->
+                <!-- Blog Post 3: Jan 10, 2026 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
                         <img src="img/HRV_1400.png" alt="Technology" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
@@ -619,8 +592,8 @@
                     </div>
                 </article>
 
-                <!-- Blog Post 5 -->
-                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal">
+                <!-- Blog Post 4: May 28, 2025 -->
+                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-dark flex items-center justify-center relative overflow-hidden">
                         <img src="img/glexlogo.png" alt="GLEX 2025" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
                     </div>
@@ -639,27 +612,49 @@
                     </div>
                 </article>
 
-                <!-- Hidden Blog Posts (OLDER) - 6, 7, 8 -->
-                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 100ms; display: none;">
-                    <div class="h-48 bg-gradient-to-br from-kk-light to-kk-dark flex items-center justify-center relative overflow-hidden">
-                        <img src="img/neuro6.png" alt="Innovation" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+                <!-- Blog Post 5: March 15, 2025 -->
+                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal">
+                    <div class="h-48 bg-gradient-to-br from-kk-dark to-kk-blue flex items-center justify-center relative overflow-hidden">
+                        <img src="img/biometric.png" alt="Research" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-2 mb-3">
-                            <span class="text-xs text-mustard-400 font-medium">Innovation</span>
+                            <span class="text-xs text-mustard-400 font-medium">Research</span>
                             <span class="text-slate-600">•</span>
-                            <span class="text-xs text-slate-500">Jan 10, 2025</span>
+                            <span class="text-xs text-slate-500">March 15, 2025</span>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Neuroplasticity Training for Space Adaptation</h4>
-                        <p class="text-slate-400 text-sm mb-4">Cognitive training protocols to enhance neural adaptation in microgravity environments.</p>
-                        <a href="blog/Cognitive-support.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Biometric Monitoring in Extreme Environments</h4>
+                        <p class="text-slate-400 text-sm mb-4">New advances in real-time physiological monitoring for astronaut health management.</p>
+                        <a href="blog/biometric.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
                             Read More 
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
 
-                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 200ms; display: none;">
+                <!-- Blog Post 6: March 10, 2025 -->
+                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 100ms;">
+                    <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
+                        <img src="img/imagefor blog.png" alt="Technology" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs text-mustard-400 font-medium">Technology</span>
+                            <span class="text-slate-600">•</span>
+                            <span class="text-xs text-slate-500">March 10, 2025</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Predictive Analytics for Crew Performance</h4>
+                        <p class="text-slate-400 text-sm mb-4">Machine learning models that anticipate cognitive load before mission-critical decisions.</p>
+                        <a href="blog/ML.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                            Read More 
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Hidden Blog Posts (OLDER) - 7, 8, 9 -->
+                <!-- Blog Post 7: Jan 30, 2025 -->
+                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 100ms; display: none;">
                     <div class="h-48 bg-gradient-to-br from-kk-light to-kk-blue flex items-center justify-center relative overflow-hidden">
                         <img src="img/nasahrp.jpg" alt="NASA HRP Conference" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
                     </div>
@@ -678,6 +673,27 @@
                     </div>
                 </article>
 
+                <!-- Blog Post 8: Jan 10, 2025 -->
+                <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 200ms; display: none;">
+                    <div class="h-48 bg-gradient-to-br from-kk-light to-kk-dark flex items-center justify-center relative overflow-hidden">
+                        <img src="img/neuro6.png" alt="Innovation" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs text-mustard-400 font-medium">Innovation</span>
+                            <span class="text-slate-600">•</span>
+                            <span class="text-xs text-slate-500">Jan 10, 2025</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Neuroplasticity Training for Space Adaptation</h4>
+                        <p class="text-slate-400 text-sm mb-4">Cognitive training protocols to enhance neural adaptation in microgravity environments.</p>
+                        <a href="blog/Cognitive-support.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
+                            Read More 
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 9: Sep 4, 2024 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 300ms; display: none;">
                     <div class="h-48 bg-gradient-to-br from-kk-light to-kk-blue flex items-center justify-center relative overflow-hidden">
                         <img src="img/elgralogo.jpg" alt="ELGRA" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
