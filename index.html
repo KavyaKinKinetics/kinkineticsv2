@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinKinetics — Closed-Loop Neuroadaptive Systems for Decisions Under Pressure</title>
-    <meta name="description" content="KinKinetics builds a closed-loop neuroadaptive wearable that senses physiological stress in real time, predicts decision instability, and intervenes to restore cognitive stability — for healthcare, high-stakes work, and extreme environments.">
+    <title>KinKinetics — Neuroadaptive Systems for Performance Under Pressure</title>
+    <meta name="description" content="KinKinetics builds a neuroadaptive wearable that senses physiological stress in real time, predicts decision instability, and intervenes to restore cognitive stability — for healthcare, high-stakes work, and extreme environments.">
     <link rel="icon" type="image/png" href="kinkinetics2.png">
-    <meta property="og:title" content="KinKinetics — Closed-Loop Neuroadaptive Systems">
-    <meta property="og:description" content="A wearable that senses stress, predicts decision instability, and intervenes in real time to keep human performance stable under pressure.">
+    <meta property="og:title" content="KinKinetics — Neuroadaptive Systems">
+    <meta property="og:description" content="A wearable that senses stress, predicts decision instability, and helps hold cognition steady under pressure.">
     <meta property="og:image" content="img/kinkinetics2.png">
     <meta property="og:type" content="website">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,6 +48,9 @@
         .card-hover:hover { transform: translateY(-4px); border-color: rgba(212,175,55,0.5); box-shadow: 0 20px 40px -20px rgba(0,0,131,0.5); }
         .loop-pulse { animation: pulse 2.4s ease-in-out infinite; }
         @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+        /* static emblem — gentle glow only, no rotation */
+        .emblem-glow { filter: drop-shadow(0 0 26px rgba(212,175,55,0.35)); animation: breathe 5s ease-in-out infinite; }
+        @keyframes breathe { 0%,100%{ filter: drop-shadow(0 0 18px rgba(212,175,55,0.28)); } 50%{ filter: drop-shadow(0 0 34px rgba(212,175,55,0.45)); } }
         .nav-link { position: relative; }
         .nav-link::after { content:''; position:absolute; left:0; bottom:-4px; height:2px; width:0; background:#D4AF37; transition:width .25s ease; }
         .nav-link:hover::after { width:100%; }
@@ -59,13 +62,13 @@
     <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
         <nav class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between h-16">
             <a href="#home" class="flex items-center gap-2.5">
-                <img src="img/kinkinetics2.png" alt="KinKinetics" class="h-8 w-auto">
+                <img src="img/kinkinetics2.png" alt="KinKinetics emblem" class="h-9 w-9 object-contain">
                 <span class="font-display font-bold text-lg tracking-tight text-white" id="brandword">KINKINETICS</span>
             </a>
             <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/85" id="navlinks">
-                <a href="#problem" class="nav-link hover:text-white">Problem</a>
+                <a href="#problem" class="nav-link hover:text-white">The problem</a>
                 <a href="#product" class="nav-link hover:text-white">Technology</a>
-                <a href="#edge" class="nav-link hover:text-white">Why us</a>
+                <a href="#defensible" class="nav-link hover:text-white">Why it's hard</a>
                 <a href="#traction" class="nav-link hover:text-white">Traction</a>
                 <a href="#research" class="nav-link hover:text-white">Research</a>
                 <a href="#blogs" class="nav-link hover:text-white">Insights</a>
@@ -77,9 +80,9 @@
         </nav>
         <div id="mobileMenu" class="hidden lg:hidden bg-kk-dark/98 backdrop-blur border-t border-white/10">
             <div class="px-6 py-4 flex flex-col gap-4 text-white/90 font-medium">
-                <a href="#problem" class="mobile-link">Problem</a>
+                <a href="#problem" class="mobile-link">The problem</a>
                 <a href="#product" class="mobile-link">Technology</a>
-                <a href="#edge" class="mobile-link">Why us</a>
+                <a href="#defensible" class="mobile-link">Why it's hard</a>
                 <a href="#traction" class="mobile-link">Traction</a>
                 <a href="#research" class="mobile-link">Research</a>
                 <a href="#blogs" class="mobile-link">Insights</a>
@@ -91,20 +94,26 @@
     <!-- ===== HERO ===== -->
     <section id="home" class="grid-bg bg-kk-dark text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-32 pb-24 sm:pt-40 sm:pb-32">
-            <div class="max-w-3xl">
-                <span class="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 text-gold-400 text-xs font-semibold tracking-wide px-3 py-1.5 mb-6">
-                    <span class="h-1.5 w-1.5 rounded-full bg-gold-400 loop-pulse"></span>
-                    NEUROADAPTIVE SYSTEMS · SENSE → DECIDE → RESPOND
-                </span>
-                <h1 class="font-display font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight">
-                    Closing the loop between your body and your best decisions.
-                </h1>
-                <p class="mt-6 text-lg sm:text-xl text-white/80 leading-relaxed">
-                    KinKinetics is building a wearable that senses physiological stress in real time, predicts when decision-making is about to destabilise, and intervenes to restore cognitive stability — starting with healthcare teams under pressure, built for anywhere humans must perform under load.
-                </p>
-                <div class="mt-9 flex flex-col sm:flex-row gap-3">
-                    <a href="#contact" class="inline-flex justify-center items-center rounded-full bg-gold-500 hover:bg-gold-400 text-kk-dark font-semibold px-7 py-3.5 transition">Partner with us</a>
-                    <a href="#product" class="inline-flex justify-center items-center rounded-full border border-white/25 hover:border-white/60 text-white font-semibold px-7 py-3.5 transition">See how it works</a>
+            <div class="grid lg:grid-cols-5 gap-10 items-center">
+                <div class="lg:col-span-3">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 text-gold-400 text-xs font-semibold tracking-wide px-3 py-1.5 mb-6">
+                        <span class="h-1.5 w-1.5 rounded-full bg-gold-400 loop-pulse"></span>
+                        NEUROADAPTIVE SYSTEMS · SENSE → DECIDE → RESPOND
+                    </span>
+                    <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.06] tracking-tight">
+                        When stress runs high, clear thinking is the first thing to go.
+                    </h1>
+                    <p class="mt-5 text-xl sm:text-2xl font-display font-semibold gold-text">KinKinetics helps you hold it steady.</p>
+                    <p class="mt-6 text-lg text-white/80 leading-relaxed max-w-2xl">
+                        KinKinetics is building a wearable that senses physiological stress in real time, predicts when decision-making is about to destabilise, and intervenes to restore cognitive stability — starting with healthcare teams under pressure, built for anywhere humans must perform under load.
+                    </p>
+                    <div class="mt-9 flex flex-col sm:flex-row gap-3">
+                        <a href="#contact" class="inline-flex justify-center items-center rounded-full bg-gold-500 hover:bg-gold-400 text-kk-dark font-semibold px-7 py-3.5 transition">Partner with us</a>
+                        <a href="#product" class="inline-flex justify-center items-center rounded-full border border-white/25 hover:border-white/60 text-white font-semibold px-7 py-3.5 transition">See how it works</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 hidden lg:flex justify-center">
+                    <img src="img/kinkinetics2.png" alt="KinKinetics emblem" class="w-72 h-72 object-contain emblem-glow">
                 </div>
             </div>
         </div>
@@ -134,24 +143,24 @@
                     Under stress and time pressure, decision quality collapses before people notice.
                 </h2>
                 <p class="mt-5 text-lg text-slate-600 leading-relaxed">
-                    A surgeon in hour ten, a clinician mid-crisis, an operator far from help — the autonomic system destabilises minutes before judgement visibly slips. The tools that exist today only see half the picture.
+                    A surgeon in hour ten, a clinician mid-crisis, an operator far from help — the body destabilises minutes before judgement visibly slips. That window is where mistakes are made, and it is where we intervene.
                 </p>
             </div>
             <div class="mt-14 grid md:grid-cols-3 gap-6">
                 <div class="reveal rounded-2xl border border-slate-200 p-7 card-hover">
-                    <div class="text-3xl mb-3">👁️</div>
-                    <h3 class="font-display font-semibold text-lg text-kk-blue">Consumer wearables sense, but never act</h3>
-                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Whoop, Oura and the Apple Watch quantify stress after the fact. They tell you what happened — they don't intervene when it matters.</p>
+                    <div class="text-3xl mb-3">📈</div>
+                    <h3 class="font-display font-semibold text-lg text-kk-blue">The body reacts first</h3>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Before you consciously feel overwhelmed, your physiology already shows it — skin conductance rises, heart-rate variability falls. The earliest warning is measurable.</p>
                 </div>
                 <div class="reveal rounded-2xl border border-slate-200 p-7 card-hover">
-                    <div class="text-3xl mb-3">⚡</div>
-                    <h3 class="font-display font-semibold text-lg text-kk-blue">Neuromodulation acts, but is blind</h3>
-                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Vagal stimulation devices fire open-loop on a fixed schedule, with no idea of your actual physiological state or whether you need it right now.</p>
+                    <div class="text-3xl mb-3">⏱️</div>
+                    <h3 class="font-display font-semibold text-lg text-kk-blue">The stakes peak under load</h3>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">A missed cue in intensive care, a rushed call under time pressure — the moments that matter most are exactly the moments stress degrades performance.</p>
                 </div>
                 <div class="reveal rounded-2xl border border-slate-200 p-7 card-hover">
-                    <div class="text-3xl mb-3">🔗</div>
-                    <h3 class="font-display font-semibold text-lg text-kk-blue">Nobody closes the loop</h3>
-                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">No system reads your state and adapts the intervention to it, in real time. That closed loop — sensing tied to action — is exactly the gap KinKinetics is built to own.</p>
+                    <div class="text-3xl mb-3">🎯</div>
+                    <h3 class="font-display font-semibold text-lg text-kk-blue">Noticing isn't enough</h3>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Knowing you're stressed doesn't restore focus in the moment. What's missing is a system that reads your state and acts on it — in real time, while it still counts.</p>
                 </div>
             </div>
         </div>
@@ -166,7 +175,7 @@
                     One closed loop: sense the state, predict the risk, restore stability.
                 </h2>
                 <p class="mt-5 text-lg text-slate-600 leading-relaxed">
-                    KinKinetics fuses multimodal physiological signals into a live estimate of cognitive state, then drives an adaptive intervention — and learns from the result. Not just a sensor. Not just a stimulator. The control layer between them.
+                    KinKinetics reads the body's stress signals, turns them into a live estimate of cognitive state, and drives a calming intervention when it's needed — then learns from the result.
                 </p>
             </div>
 
@@ -177,8 +186,8 @@
                         <span class="h-9 w-9 rounded-lg bg-kk-blue text-white font-display font-bold grid place-items-center">1</span>
                         <span class="font-display font-bold text-gold-600 tracking-wide">SENSE</span>
                     </div>
-                    <h3 class="font-display font-semibold text-xl text-kk-blue">Multimodal physiological sensing</h3>
-                    <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">Skin conductance (EDA), heart rate and heart-rate variability captured continuously from a low-cost wearable node — the autonomic signatures of stress and cognitive load.</p>
+                    <h3 class="font-display font-semibold text-xl text-kk-blue">Read the body's stress signals</h3>
+                    <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">Skin conductance, heart rate and heart-rate variability — the autonomic signatures of stress and cognitive load — captured continuously from a lightweight wearable.</p>
                 </div>
                 <!-- DECIDE -->
                 <div class="reveal rounded-2xl bg-white border border-slate-200 p-8 card-hover">
@@ -186,8 +195,8 @@
                         <span class="h-9 w-9 rounded-lg bg-kk-blue text-white font-display font-bold grid place-items-center">2</span>
                         <span class="font-display font-bold text-gold-600 tracking-wide">DECIDE</span>
                     </div>
-                    <h3 class="font-display font-semibold text-xl text-kk-blue">Real-time state estimation</h3>
-                    <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">A signal-processing and machine-learning pipeline fuses the channels into a live state — Calm, Elevated or High — with quality checks and hysteresis, and is being extended to predict decision instability before it happens.</p>
+                    <h3 class="font-display font-semibold text-xl text-kk-blue">Estimate the state in real time</h3>
+                    <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">A signal-processing and machine-learning pipeline fuses those signals into a live state — Calm, Elevated or High — and is being extended to flag decision instability before it happens.</p>
                 </div>
                 <!-- RESPOND -->
                 <div class="reveal rounded-2xl bg-white border border-slate-200 p-8 card-hover">
@@ -195,8 +204,8 @@
                         <span class="h-9 w-9 rounded-lg bg-kk-blue text-white font-display font-bold grid place-items-center">3</span>
                         <span class="font-display font-bold text-gold-600 tracking-wide">RESPOND</span>
                     </div>
-                    <h3 class="font-display font-semibold text-xl text-kk-blue">Adaptive intervention</h3>
-                    <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">Today: real-time visual and haptic feedback tied to state. On the roadmap: closed-loop transcutaneous auricular vagus nerve stimulation (taVNS) that adapts dose to the state the system just measured.</p>
+                    <h3 class="font-display font-semibold text-xl text-kk-blue">Intervene to steady it</h3>
+                    <p class="mt-3 text-slate-600 text-[15px] leading-relaxed">Today: real-time visual and haptic feedback tied to state. On the roadmap: gentle, non-invasive vagus-nerve stimulation that adapts to the state the system just measured.</p>
                 </div>
             </div>
 
@@ -216,46 +225,34 @@
         </div>
     </section>
 
-    <!-- ===== EDGE / MOAT ===== -->
-    <section id="edge" class="py-24 bg-white">
+    <!-- ===== WHY IT'S HARD (self-focused, no competitors) ===== -->
+    <section id="defensible" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-5 sm:px-8">
             <div class="max-w-3xl reveal">
-                <p class="text-gold-600 font-semibold text-sm tracking-wider uppercase mb-3">Why us</p>
+                <p class="text-gold-600 font-semibold text-sm tracking-wider uppercase mb-3">Why it's hard</p>
                 <h2 class="font-display font-bold text-3xl sm:text-4xl text-kk-blue leading-tight">
-                    The defensibility is in the loop, not the hardware.
+                    Hard to build. Harder to copy.
                 </h2>
                 <p class="mt-5 text-lg text-slate-600 leading-relaxed">
-                    The mask and sensors are commoditising. The moat is the closed-loop control logic and the proprietary multimodal-plus-intervention dataset it generates — which deepens with every study and cannot be replicated retroactively.
+                    The value isn't the sensors or the strap — it's the closed loop, the personalisation, and the data it generates over time.
                 </p>
             </div>
-
-            <div class="mt-12 overflow-hidden rounded-2xl border border-slate-200 reveal">
-                <table class="w-full text-left text-[15px]">
-                    <thead class="bg-kk-blue text-white font-display">
-                        <tr>
-                            <th class="px-5 py-4 font-semibold">Category</th>
-                            <th class="px-5 py-4 font-semibold">What they do</th>
-                            <th class="px-5 py-4 font-semibold">What KinKinetics does</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-700">
-                        <tr>
-                            <td class="px-5 py-4 font-semibold text-kk-blue">Consumer wearables<br><span class="font-normal text-slate-400 text-sm">Whoop, Oura, Apple Watch</span></td>
-                            <td class="px-5 py-4">Sense and report stress</td>
-                            <td class="px-5 py-4 gold-text font-semibold">Senses <em>and</em> intervenes in real time</td>
-                        </tr>
-                        <tr class="bg-slate-50">
-                            <td class="px-5 py-4 font-semibold text-kk-blue">Neuromodulation<br><span class="font-normal text-slate-400 text-sm">Nurosym, Pulsetto, Neuvana</span></td>
-                            <td class="px-5 py-4">Stimulate open-loop, blind to state</td>
-                            <td class="px-5 py-4 gold-text font-semibold">Closes the loop with live state estimation</td>
-                        </tr>
-                        <tr>
-                            <td class="px-5 py-4 font-semibold text-kk-blue">EEG headsets<br><span class="font-normal text-slate-400 text-sm">Muse, Neurable</span></td>
-                            <td class="px-5 py-4">Target attention / meditation</td>
-                            <td class="px-5 py-4 gold-text font-semibold">Targets autonomic &amp; decision-stability signals</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="mt-14 grid md:grid-cols-3 gap-6">
+                <div class="reveal rounded-2xl border border-slate-200 p-7 card-hover">
+                    <div class="text-3xl mb-3">🔗</div>
+                    <h3 class="font-display font-semibold text-lg text-kk-blue">The closed loop</h3>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Reading physiological state and driving the right response, moment to moment, is a genuine real-time control problem — and it is the core of what we build.</p>
+                </div>
+                <div class="reveal rounded-2xl border border-slate-200 p-7 card-hover">
+                    <div class="text-3xl mb-3">🧠</div>
+                    <h3 class="font-display font-semibold text-lg text-kk-blue">Personalised, not averaged</h3>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Stress signatures differ from person to person. The system adapts to the individual rather than relying on one-size-fits-all thresholds.</p>
+                </div>
+                <div class="reveal rounded-2xl border border-slate-200 p-7 card-hover">
+                    <div class="text-3xl mb-3">📊</div>
+                    <h3 class="font-display font-semibold text-lg text-kk-blue">A dataset that compounds</h3>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Every session deepens a multimodal physiological-and-intervention dataset that keeps improving the models — an advantage that grows with use.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -271,7 +268,7 @@
             <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
                     <div class="font-display font-bold text-3xl text-gold-400">Prototype 1</div>
-                    <p class="mt-2 text-white/75 text-sm leading-relaxed">Live sense → decide → respond loop running: EDA + heart rate, an adaptive state classifier, real-time feedback and a Python analytics brain.</p>
+                    <p class="mt-2 text-white/75 text-sm leading-relaxed">A live sense → decide → respond loop: skin conductance and heart rate, an adaptive state classifier, real-time feedback, and a Python analytics engine.</p>
                 </div>
                 <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
                     <div class="font-display font-bold text-3xl text-gold-400">KSUM</div>
@@ -279,11 +276,11 @@
                 </div>
                 <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
                     <div class="font-display font-bold text-3xl text-gold-400">Benchmarked</div>
-                    <p class="mt-2 text-white/75 text-sm leading-relaxed">Stress-detection pipelines validated against public physiological datasets (WESAD, DREAMER) for scientific credibility.</p>
+                    <p class="mt-2 text-white/75 text-sm leading-relaxed">Stress-detection pipelines validated against established public physiological datasets for scientific credibility.</p>
                 </div>
                 <div class="reveal rounded-2xl border border-white/10 bg-white/5 p-6">
-                    <div class="font-display font-bold text-3xl text-gold-400">3 stages</div>
-                    <p class="mt-2 text-white/75 text-sm leading-relaxed">Presented at GLEX 2025, the NASA Human Research Program community, and ELGRA — building scientific credibility in the space-health domain.</p>
+                    <div class="font-display font-bold text-3xl text-gold-400">On stage</div>
+                    <p class="mt-2 text-white/75 text-sm leading-relaxed">Presented at GLEX 2025, the NASA Human Research Program community, and ELGRA — building credibility in the space-health domain.</p>
                 </div>
             </div>
         </div>
@@ -295,23 +292,23 @@
             <div class="max-w-3xl reveal">
                 <p class="text-gold-600 font-semibold text-sm tracking-wider uppercase mb-3">Who it's for</p>
                 <h2 class="font-display font-bold text-3xl sm:text-4xl text-kk-blue leading-tight">One platform, three horizons.</h2>
-                <p class="mt-5 text-lg text-slate-600 leading-relaxed">The same closed-loop stack serves each phase with different form factors and software tiers — research-grade revenue funds the evidence base that unlocks the markets after it.</p>
+                <p class="mt-5 text-lg text-slate-600 leading-relaxed">The same closed-loop system serves each phase with different form factors and software tiers — research-grade work funds the evidence base that unlocks the markets after it.</p>
             </div>
             <div class="mt-12 grid md:grid-cols-3 gap-6">
                 <div class="reveal rounded-2xl bg-white border border-slate-200 p-7 card-hover">
                     <span class="inline-block rounded-full bg-gold-500/15 text-gold-600 text-xs font-semibold px-3 py-1 mb-4">BEACHHEAD · NOW</span>
                     <h3 class="font-display font-semibold text-lg text-kk-blue">Healthcare &amp; research</h3>
-                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Clinicians under sustained stress and neuroscience / human-factors labs — a research-grade stack that replaces stitched-together hardware, with no medical-device blocker.</p>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Clinicians under sustained stress and neuroscience / human-factors labs — a research-grade stack with no medical-device blocker.</p>
                 </div>
                 <div class="reveal rounded-2xl bg-white border border-slate-200 p-7 card-hover">
                     <span class="inline-block rounded-full bg-gold-500/15 text-gold-600 text-xs font-semibold px-3 py-1 mb-4">EXPANSION · NEXT</span>
                     <h3 class="font-display font-semibold text-lg text-kk-blue">High-stakes operators</h3>
-                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Enterprise resilience for roles where a degraded decision is costly — emergency services, aviation ops, finance, surgical training programmes.</p>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Resilience for roles where a degraded decision is costly — emergency services, aviation ops, and surgical training programmes.</p>
                 </div>
                 <div class="reveal rounded-2xl bg-white border border-slate-200 p-7 card-hover">
                     <span class="inline-block rounded-full bg-gold-500/15 text-gold-600 text-xs font-semibold px-3 py-1 mb-4">LONG HORIZON</span>
                     <h3 class="font-display font-semibold text-lg text-kk-blue">Extreme environments</h3>
-                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Space missions, isolated-confined-extreme stations and defence — autonomous physiological support where help is latency-bound and crew cognition is mission-critical.</p>
+                    <p class="mt-2 text-slate-600 text-[15px] leading-relaxed">Space missions, isolated and confined stations, and defence — autonomous support where crew cognition is mission-critical.</p>
                 </div>
             </div>
         </div>
@@ -354,7 +351,7 @@
                 <h2 class="font-display font-bold text-2xl sm:text-3xl leading-tight">Kavya Murali Parthasarathy</h2>
                 <p class="mt-2 text-gold-300 font-medium">Founder · Researcher in neuroeconomics &amp; decision science</p>
                 <p class="mt-5 text-white/80 leading-relaxed max-w-3xl">
-                    KinKinetics is led by a researcher working at the intersection of behavioural science, neuroscience and high-stakes decision-making. In a category where scientific legitimacy gates customer trust, founder-market fit is the unfair advantage: the person building the decision-stability wearable is the person who studies how decisions break under pressure.
+                    KinKinetics is led by a researcher working at the intersection of behavioural science, neuroscience and high-stakes decision-making. In a field where scientific legitimacy earns customer trust, that is the unfair advantage: the person building the decision-stability wearable is the person who studies how decisions break under pressure.
                 </p>
                 <a href="https://www.linkedin.com/in/kavya-murali-parthasarathy-a76230b1/" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-gold-400 font-semibold hover:text-gold-300 transition">
                     Connect on LinkedIn →
@@ -363,7 +360,7 @@
         </div>
     </section>
 
-    <!-- ===== BLOG ===== -->
+    <!-- ===== BLOG / INSIGHTS ===== -->
     <section id="blogs" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-5 sm:px-8">
             <div class="flex items-end justify-between flex-wrap gap-4 mb-12 reveal">
@@ -374,51 +371,57 @@
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <a href="blog/ML.html" class="reveal group rounded-2xl overflow-hidden border border-slate-200 card-hover block">
-                    <div class="h-44 overflow-hidden bg-slate-100"><img src="img/imagefor%20blog.png" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="h-44 overflow-hidden bg-slate-900"><img src="img/HRV_1400.png" alt="Physiological signal charts" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
                     <div class="p-6">
                         <span class="text-xs font-semibold text-gold-600">TECHNOLOGY · FEB 2026</span>
                         <h3 class="mt-2 font-display font-semibold text-lg text-kk-blue">Predictive Analytics for Crew Performance</h3>
                         <p class="mt-2 text-slate-600 text-sm">Machine-learning models that anticipate cognitive load before mission-critical decisions.</p>
+                        <span class="mt-3 inline-block text-gold-600 text-sm font-semibold">Read more →</span>
                     </div>
                 </a>
                 <a href="blog/personalized-interactions.html" class="reveal group rounded-2xl overflow-hidden border border-slate-200 card-hover block">
-                    <div class="h-44 overflow-hidden bg-slate-100"><img src="img/HRV_1400.png" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="h-44 overflow-hidden bg-slate-900"><img src="img/neuro6.png" alt="Neuroeconomics research" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
                     <div class="p-6">
                         <span class="text-xs font-semibold text-gold-600">TECHNOLOGY · DEC 2025</span>
                         <h3 class="mt-2 font-display font-semibold text-lg text-kk-blue">Neuroadaptive Training in Extreme Environments</h3>
                         <p class="mt-2 text-slate-600 text-sm">Cognitive stability under stress, and how adaptive systems can protect it.</p>
+                        <span class="mt-3 inline-block text-gold-600 text-sm font-semibold">Read more →</span>
                     </div>
                 </a>
                 <a href="blog/train.html" class="reveal group rounded-2xl overflow-hidden border border-slate-200 card-hover block">
-                    <div class="h-44 overflow-hidden bg-slate-100"><img src="img/space.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="h-44 overflow-hidden bg-slate-900"><img src="img/space.jpg" alt="Space" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
                     <div class="p-6">
                         <span class="text-xs font-semibold text-gold-600">TECHNOLOGY · JAN 2026</span>
                         <h3 class="mt-2 font-display font-semibold text-lg text-kk-blue">Training the Brain for Space</h3>
                         <p class="mt-2 text-slate-600 text-sm">Neuroplasticity as a mission-critical skill for long-duration flight.</p>
+                        <span class="mt-3 inline-block text-gold-600 text-sm font-semibold">Read more →</span>
                     </div>
                 </a>
                 <a href="blog/biometric.html" class="reveal group rounded-2xl overflow-hidden border border-slate-200 card-hover block">
-                    <div class="h-44 overflow-hidden bg-slate-100"><img src="img/biometric.png" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="h-44 overflow-hidden bg-slate-900"><img src="img/biometric.png" alt="Biometric monitoring" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
                     <div class="p-6">
                         <span class="text-xs font-semibold text-gold-600">RESEARCH · MAR 2025</span>
                         <h3 class="mt-2 font-display font-semibold text-lg text-kk-blue">Biometric Monitoring in Extreme Environments</h3>
                         <p class="mt-2 text-slate-600 text-sm">Advances in real-time physiological monitoring for astronaut health.</p>
+                        <span class="mt-3 inline-block text-gold-600 text-sm font-semibold">Read more →</span>
                     </div>
                 </a>
                 <a href="blog/GLEX.html" class="reveal group rounded-2xl overflow-hidden border border-slate-200 card-hover block">
-                    <div class="h-44 overflow-hidden bg-slate-100"><img src="img/glexlogo.png" alt="" class="w-full h-full object-contain p-6 group-hover:scale-105 transition duration-500"></div>
+                    <div class="h-44 overflow-hidden bg-slate-900 grid place-items-center"><img src="img/glexlogo.png" alt="GLEX 2025" class="max-h-full max-w-full object-contain p-6 group-hover:scale-105 transition duration-500"></div>
                     <div class="p-6">
                         <span class="text-xs font-semibold text-gold-600">SPACE · MAY 2025</span>
                         <h3 class="mt-2 font-display font-semibold text-lg text-kk-blue">GLEX 2025</h3>
                         <p class="mt-2 text-slate-600 text-sm">Showcasing the neuroadaptive efficiency paradigm on a global stage.</p>
+                        <span class="mt-3 inline-block text-gold-600 text-sm font-semibold">Read more →</span>
                     </div>
                 </a>
                 <a href="blog/nasahrp.html" class="reveal group rounded-2xl overflow-hidden border border-slate-200 card-hover block">
-                    <div class="h-44 overflow-hidden bg-slate-100"><img src="img/nasahrp.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                    <div class="h-44 overflow-hidden bg-slate-900"><img src="img/nasahrp.jpg" alt="NASA Human Research Program" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
                     <div class="p-6">
                         <span class="text-xs font-semibold text-gold-600">CONFERENCE · JAN 2025</span>
                         <h3 class="mt-2 font-display font-semibold text-lg text-kk-blue">Neuroeconomic Decision Support in Space</h3>
                         <p class="mt-2 text-slate-600 text-sm">Advancing decision support for long-duration spaceflight.</p>
+                        <span class="mt-3 inline-block text-gold-600 text-sm font-semibold">Read more →</span>
                     </div>
                 </a>
             </div>
@@ -428,9 +431,9 @@
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="py-24 bg-kk-dark text-white grid-bg">
         <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center reveal">
-            <h2 class="font-display font-bold text-3xl sm:text-5xl leading-tight">Build the closed loop with us.</h2>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl leading-tight">Build the next generation of resilience tools with us.</h2>
             <p class="mt-5 text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-                We're partnering with research labs, clinical teams and mission-driven investors to take the next generation of neuroadaptive resilience tools from prototype to deployment.
+                We're partnering with research labs, clinical teams and mission-driven investors to take neuroadaptive resilience from prototype to deployment.
             </p>
             <div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
                 <a href="mailto:info@kinkinetics.com" class="inline-flex justify-center items-center rounded-full bg-gold-500 hover:bg-gold-400 text-kk-dark font-semibold px-7 py-3.5 transition">Get in touch</a>
@@ -444,10 +447,10 @@
         <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="sm:col-span-2 lg:col-span-2">
                 <div class="flex items-center gap-2.5">
-                    <img src="img/kinkinetics2.png" alt="KinKinetics" class="h-8 w-auto">
+                    <img src="img/kinkinetics2.png" alt="KinKinetics emblem" class="h-9 w-9 object-contain">
                     <span class="font-display font-bold text-white text-lg">KINKINETICS</span>
                 </div>
-                <p class="mt-4 max-w-sm text-sm leading-relaxed">Closed-loop neuroadaptive systems for human performance under stress — in healthcare, high-stakes work, and extreme environments.</p>
+                <p class="mt-4 max-w-sm text-sm leading-relaxed">Neuroadaptive systems for human performance under stress — in healthcare, high-stakes work, and extreme environments.</p>
             </div>
             <div>
                 <h4 class="text-white font-semibold text-sm mb-3">Explore</h4>
@@ -479,7 +482,6 @@
     </footer>
 
     <script>
-        // Nav background on scroll
         const nav = document.getElementById('nav');
         const brand = document.getElementById('brandword');
         function onScroll() {
@@ -497,13 +499,11 @@
         }
         window.addEventListener('scroll', onScroll); onScroll();
 
-        // Mobile menu
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-        // Reveal on scroll
         const io = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
         }, { threshold: 0.12 });
