@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KinKinetics</title>
+    <title>KinKinetics — Neuroadaptive Systems for Decision Stability Under Pressure</title>
+    <meta name="description" content="KinKinetics is a deep-tech venture building a closed-loop neuroadaptive wearable that senses physiological stress, predicts decision instability, and intervenes to restore cognitive stability — for healthcare, high-stakes work, and extreme environments.">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="kinkinetics2.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -55,34 +56,29 @@
             margin: 0;
             overflow-x: hidden;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Space Grotesk', sans-serif;
         }
-
         /* Glass effect for nav */
         .glass-nav {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
-
         /* Glow text effect */
         .glow-text {
             text-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.3);
         }
-
         /* Glass card effect */
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
         .glow-border {
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.1);
         }
-
         /* Particle effect */
         .particle {
             position: absolute;
@@ -92,7 +88,6 @@
             border-radius: 50%;
             animation: float-particle 12s infinite;
         }
-
         @keyframes float-particle {
             0%, 100% {
                 transform: translateY(0) translateX(0);
@@ -109,29 +104,24 @@
                 opacity: 0;
             }
         }
-
         /* Reveal animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-
         /* Blog card hover */
         .blog-card {
             transition: all 0.3s ease;
         }
-
         .blog-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-
         /* Hidden blog posts */
         .hidden-blog {
             opacity: 0;
@@ -139,7 +129,6 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
             display: none;
         }
-
         .hidden-blog.revealed {
             opacity: 1;
             transform: translateY(0);
@@ -148,7 +137,6 @@
 <base target="_blank">
 </head>
 <body>
-
     <!-- Navigation - Always Visible -->
     <nav class="fixed w-full z-50 top-0 glass-nav">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -163,11 +151,10 @@
                         <span class="text-[10px] text-mustard-400 uppercase tracking-widest">Neuroadaptive Systems</span>
                     </div>
                 </a>
-
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#about" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">About</a>
-                    <a href="#services" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Services</a>
+                    <a href="#services" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">System</a>
                     <a href="#research" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Research</a>
                     <a href="#blogs" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Blog</a>
                     <a href="#contact" class="text-sm text-slate-300 hover:text-mustard-400 transition-colors duration-300">Contact</a>
@@ -175,7 +162,6 @@
                         Get in Touch
                     </a>
                 </div>
-
                 <!-- Mobile menu button -->
                 <button class="md:hidden text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -184,22 +170,20 @@
                 </button>
             </div>
         </div>
-
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/5">
             <div class="px-6 py-4 space-y-3">
                 <a href="#about" class="block text-slate-300 hover:text-mustard-400 py-2">About</a>
-                <a href="#services" class="block text-slate-300 hover:text-mustard-400 py-2">Services</a>
+                <a href="#services" class="block text-slate-300 hover:text-mustard-400 py-2">System</a>
                 <a href="#research" class="block text-slate-300 hover:text-mustard-400 py-2">Research</a>
                 <a href="#blogs" class="block text-slate-300 hover:text-mustard-400 py-2">Blog</a>
                 <a href="#contact" class="block text-slate-300 hover:text-mustard-400 py-2">Contact</a>
             </div>
         </div>
     </nav>
-
     <!-- LANDING PAGE SECTION - Clean Centered Design -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black" id="home">
-        
+
         <!-- Animated Particles -->
         <div class="absolute inset-0 pointer-events-none">
             <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
@@ -211,32 +195,30 @@
             <div class="particle" style="left: 15%; animation-delay: 4s;"></div>
             <div class="particle" style="left: 90%; animation-delay: 7s;"></div>
         </div>
-
         <!-- Central Content - Logo Left, Text Right -->
         <div class="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-4">
-            
+
             <!-- Logo -->
             <div class="relative animate-float">
                 <!-- Glow effect behind logo -->
                 <div class="absolute inset-0 bg-mustard-500/15 rounded-full blur-3xl scale-125"></div>
-                
+
                 <!-- Logo container -->
                 <div class="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 animate-pulse-glow">
                     <img src="kinkinetics2.png" alt="KinKinetics" class="w-full h-full object-contain animate-spin-slow">
                 </div>
             </div>
-            
+
             <!-- Company Name -->
             <div class="flex flex-col items-center md:items-start">
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-wider font-display glow-text">
                     KINKINETICS
                 </h1>
                 <p class="text-mustard-400 text-lg md:text-xl mt-4 tracking-widest uppercase">
-                    Supporting Human Resilience in Extreme Environments
+                    Keeping Decisions Stable Under Pressure
                 </p>
             </div>
         </div>
-
         <!-- Scroll indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
             <svg class="w-6 h-6 text-mustard-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -244,33 +226,30 @@
             </svg>
         </div>
     </section>
-
     <!-- About Section -->
     <section id="about" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-start">
                 <div class="reveal">
                     <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4">About KinKinetics</h2>
-                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Pioneering Neuroadaptive Systems for Human Flourishing</h3>
-                    
-                    <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
-                        <p>KinKinetics is a pioneering neuroadaptive company on a mission to support human resilience in the most challenging environments—space, healthcare, and beyond.</p>
-                        
-                        <p>We develop intelligent, AI-driven systems that combine psychological insight, physiological monitoring, and real-time decision support to help individuals thrive in isolation, high-stakes settings, and emotionally demanding scenarios.</p>
-                        
-                        <p>Whether it's astronauts on long-duration space missions, elderly individuals living alone, or remote healthcare teams, our tools are built to offer <span class="text-mustard-400 font-medium">kin-like emotional support</span> and cognitive clarity when it matters most.</p>
-                    </div>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">A Closed Loop That Keeps Decisions Stable Under Pressure</h3>
 
+                    <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
+                        <p>KinKinetics is a deep-tech venture building a closed-loop neuroadaptive wearable: it senses physiological stress in real time, predicts the moment decision quality is about to break down, and intervenes to restore it.</p>
+
+                        <p>The science is the moat. We combine autonomic physiology, machine learning, and neuroeconomic models of how decisions fail under time pressure — a system that grows more accurate the more it is used.</p>
+
+                        <p>We start where the need is sharpest and the path to real-world data is clearest — clinicians under sustained stress — then scale the same core system to high-stakes operators and, ultimately, to <span class="text-mustard-400 font-medium">long-duration space missions</span>.</p>
+                    </div>
                     <div class="mt-8 flex items-center gap-4">
                         <div class="flex -space-x-2">
                             <div class="w-10 h-10 rounded-full bg-kk-blue border-2 border-black flex items-center justify-center text-mustard-400 text-xs font-bold">Space</div>
                             <div class="w-10 h-10 rounded-full bg-kk-light border-2 border-black flex items-center justify-center text-mustard-400 text-xs font-bold">Health</div>
                             <div class="w-10 h-10 rounded-full bg-mustard-600 border-2 border-black flex items-center justify-center text-kk-blue text-xs font-bold">Neuro</div>
                         </div>
-                        <span class="text-sm text-slate-400">Multi-domain expertise</span>
+                        <span class="text-sm text-slate-400">One core system, three markets</span>
                     </div>
                 </div>
-
                 <div class="space-y-6 reveal">
                     <div class="glass-card rounded-2xl p-6 glow-border">
                         <div class="flex items-start gap-4">
@@ -280,12 +259,11 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold text-lg mb-2">Evidence-Based Approach</h4>
-                                <p class="text-slate-400 text-sm">Our work is grounded in cutting-edge Cognitive neuroscience, neuropsychoeconomics, behavioral science, space medicine and space psychology.</p>
+                                <h4 class="text-white font-semibold text-lg mb-2">Evidence-Based, Not Wellness</h4>
+                                <p class="text-slate-400 text-sm">Grounded in peer-reviewed neuroeconomics, autonomic physiology and space medicine — not repackaged consumer wellness.</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="glass-card rounded-2xl p-6 glow-border">
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 rounded-xl bg-kk-blue/30 flex items-center justify-center shrink-0">
@@ -294,12 +272,11 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold text-lg mb-2">Global Collaboration</h4>
-                                <p class="text-slate-400 text-sm">We collaborate with scientists, engineers, doctors and caregivers across the globe to build adaptive, evidence-based solutions.</p>
+                                <h4 class="text-white font-semibold text-lg mb-2">Defensible by Design</h4>
+                                <p class="text-slate-400 text-sm">The value is the closed loop and a multimodal dataset that compounds with every session — hard to replicate, and the advantage widens over time.</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="glass-card rounded-2xl p-6 glow-border">
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 rounded-xl bg-kk-blue/30 flex items-center justify-center shrink-0">
@@ -308,8 +285,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-semibold text-lg mb-2">Deeply Human</h4>
-                                <p class="text-slate-400 text-sm">Solutions that are adaptive, evidence-based, and deeply human—designed for Earth and space.</p>
+                                <h4 class="text-white font-semibold text-lg mb-2">Built to Scale</h4>
+                                <p class="text-slate-400 text-sm">One core sense–predict–intervene system, delivered as a research-grade stack today and hardened for higher-stakes settings as the evidence base grows.</p>
                             </div>
                         </div>
                     </div>
@@ -317,16 +294,14 @@
             </div>
         </div>
     </section>
-
     <!-- Services Section -->
     <section id="services" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4">Our Services</h2>
-                <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Comprehensive Resilience Solutions</h3>
-                <p class="text-slate-300 text-lg">From wearable technologies to clinical interventions, we create the next generation of resilience tools.</p>
+                <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4">The System</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">One Closed Loop. Three Markets.</h3>
+                <p class="text-slate-300 text-lg">The same sense–predict–intervene core, delivered as a research-grade stack today and hardened for higher-stakes settings as the evidence compounds.</p>
             </div>
-
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Service cards -->
                 <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 group reveal blog-card">
@@ -335,133 +310,127 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Real-Time Monitoring</h4>
-                    <p class="text-slate-400 mb-4">Physiological and psychological monitoring systems for continuous resilience assessment.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Sense</h4>
+                    <p class="text-slate-400 mb-4">Continuous physiological sensing — the autonomic signatures of stress and cognitive load — from a lightweight wearable.</p>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Wearable integration</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Biometric analysis</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Stress detection</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Electrodermal activity</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Heart rate &amp; HRV</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Continuous capture</li>
                     </ul>
                 </div>
-
                 <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 group reveal blog-card" style="transition-delay: 100ms;">
                     <div class="w-14 h-14 rounded-2xl bg-kk-blue/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-7 h-7 text-mustard-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">AI-Driven Decision Support</h4>
-                    <p class="text-slate-400 mb-4">Intelligent systems that provide personalized interventions and cognitive support.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Predict</h4>
+                    <p class="text-slate-400 mb-4">A signal-processing and machine-learning pipeline turns raw physiology into a live cognitive state — and is being extended to flag decision instability before it happens.</p>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Predictive analytics</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Adaptive protocols</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Real-time feedback</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Real-time state estimation</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Decision-instability model</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Personalised thresholds</li>
                     </ul>
                 </div>
-
                 <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 group reveal blog-card" style="transition-delay: 200ms;">
                     <div class="w-14 h-14 rounded-2xl bg-kk-blue/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-7 h-7 text-mustard-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Clinical Interventions</h4>
-                    <p class="text-slate-400 mb-4">Research-backed protocols including oxytocin and vagus nerve stimulation therapies.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Intervene</h4>
+                    <p class="text-slate-400 mb-4">A closed-loop response tied to state: real-time visual and haptic feedback today; non-invasive vagus-nerve stimulation on the roadmap.</p>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Hormonal research</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Nerve stimulation techniques</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Stress intervention</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Real-time feedback</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Non-invasive taVNS (roadmap)</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Adapts to measured state</li>
                     </ul>
                 </div>
-
                 <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 group reveal blog-card">
                     <div class="w-14 h-14 rounded-2xl bg-kk-blue/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-7 h-7 text-mustard-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Space Psychology</h4>
-                    <p class="text-slate-400 mb-4">Specialized support systems for long-duration space missions and isolation scenarios.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Healthcare — Beachhead</h4>
+                    <p class="text-slate-400 mb-4">Clinicians and human-factors labs under sustained stress. Research-grade, with no medical-device blocker — the fastest route to real-world evidence.</p>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Crew support</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Isolation countermeasures</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Performance optimization</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Clinician stress</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Research-grade stack</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Builds the evidence base</li>
                     </ul>
                 </div>
-
                 <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 group reveal blog-card" style="transition-delay: 100ms;">
                     <div class="w-14 h-14 rounded-2xl bg-kk-blue/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-7 h-7 text-mustard-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Elderly Care</h4>
-                    <p class="text-slate-400 mb-4">Support systems for aging individuals living alone, ensuring safety and emotional wellbeing.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">High-Stakes Operators — Next</h4>
+                    <p class="text-slate-400 mb-4">Emergency services, aviation and surgical training — roles where a single degraded decision is costly.</p>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Remote monitoring</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Social connection</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Health tracking</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Resilience under load</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Operator performance</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Training programmes</li>
                     </ul>
                 </div>
-
                 <div class="glass-card rounded-2xl p-8 hover:bg-white/5 transition-all duration-300 group reveal blog-card" style="transition-delay: 200ms;">
                     <div class="w-14 h-14 rounded-2xl bg-kk-blue/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <svg class="w-7 h-7 text-mustard-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Healthcare Teams</h4>
-                    <p class="text-slate-400 mb-4">Resilience support for remote and high-stress healthcare professionals.</p>
+                    <h4 class="text-xl font-bold text-white mb-3">Extreme Environments — Long Horizon</h4>
+                    <p class="text-slate-400 mb-4">Long-duration spaceflight, isolated and confined stations, and defence — autonomous decision support where crew cognition is mission-critical.</p>
                     <ul class="space-y-2 text-sm text-slate-500">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Burnout prevention</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Team coordination</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Decision support</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Microgravity &amp; isolation</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Cognitive countermeasures</li>
+                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-mustard-400"></span>Autonomous support</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Research Section -->
     <section id="research" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="reveal">
                     <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4">Research & Development</h2>
-                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Cutting-Edge Science</h3>
-                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">Our work spans multiple disciplines, combining cognitive neuroscience, behavioral science, neuroeconomics and space medicine to create truly innovative solutions.</p>
-                    
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Built on Peer-Reviewed Science</h3>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">KinKinetics sits at the intersection of neuroeconomics, autonomic physiology and space medicine — a founder-led research programme, not a consumer gadget.</p>
+
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
                             <div class="w-2 h-2 rounded-full bg-mustard-400 mt-2 shrink-0"></div>
                             <div>
                                 <h4 class="text-white font-semibold mb-1">Neuroeconomics</h4>
-                                <p class="text-slate-400 text-sm">Understanding decision-making under stress and uncertainty</p>
+                                <p class="text-slate-400 text-sm">How decisions destabilise under stress, uncertainty and time pressure</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="w-2 h-2 rounded-full bg-mustard-400 mt-2 shrink-0"></div>
                             <div>
-                                <h4 class="text-white font-semibold mb-1">Behavioral Science</h4>
-                                <p class="text-slate-400 text-sm">Designing interventions that promote positive behavioral change</p>
+                                <h4 class="text-white font-semibold mb-1">Autonomic Physiology</h4>
+                                <p class="text-slate-400 text-sm">HRV, electrodermal activity and vagal tone as readouts of cognitive load</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-2 h-2 rounded-full bg-mustard-400 mt-2 shrink-0"></div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Neuromodulation</h4>
+                                <p class="text-slate-400 text-sm">Non-invasive vagus nerve stimulation as a closed-loop intervention</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="w-2 h-2 rounded-full bg-mustard-400 mt-2 shrink-0"></div>
                             <div>
                                 <h4 class="text-white font-semibold mb-1">Space Medicine</h4>
-                                <p class="text-slate-400 text-sm">Addressing physiological and psychological challenges of spaceflight</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-2 h-2 rounded-full bg-mustard-400 mt-2 shrink-0"></div>
-                            <div>
-                                <h4 class="text-white font-semibold mb-1">Space Psychology</h4>
-                                <p class="text-slate-400 text-sm">Supporting mental health in isolated and confined environments</p>
+                                <p class="text-slate-400 text-sm">Cognitive stability and countermeasures for isolated, confined, extreme settings</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Link to Research Posts -->
                     <div class="mt-8">
                         <a href="research/" class="inline-flex items-center gap-2 px-6 py-3 bg-mustard-500 hover:bg-mustard-400 text-kk-blue font-semibold rounded-lg transition-all">
@@ -472,65 +441,62 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="relative reveal">
                     <div class="glass-card rounded-3xl p-8 relative overflow-hidden glow-border">
                         <div class="absolute top-0 right-0 w-64 h-64 bg-kk-blue/20 rounded-full blur-3xl"></div>
-                        
-                        <h4 class="text-2xl font-bold text-white mb-6 relative z-10">Active Research Areas</h4>
-                        
+
+                        <h4 class="text-2xl font-bold text-white mb-6 relative z-10">Where the Build Stands</h4>
+
                         <div class="space-y-4 relative z-10">
                             <div class="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-mustard-500/20">
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                                    <span class="text-white font-medium">Hormonal Intervention Protocols</span>
+                                    <span class="text-white font-medium">Closed-Loop Wearable (Prototype 1)</span>
                                 </div>
-                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">Clinical Trials</span>
+                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">Live</span>
                             </div>
-                            
+
                             <div class="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-mustard-500/20">
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                                    <span class="text-white font-medium">Nerve Stimulation</span>
+                                    <span class="text-white font-medium">Stress-Detection ML</span>
                                 </div>
-                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">Active</span>
+                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">Benchmarked</span>
                             </div>
-                            
+
                             <div class="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-mustard-500/20">
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
-                                    <span class="text-white font-medium">Wearable Biometrics</span>
+                                    <span class="text-white font-medium">Decision-Instability Prediction</span>
                                 </div>
-                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">Development</span>
+                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">In Development</span>
                             </div>
-                            
+
                             <div class="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-mustard-500/20">
                                 <div class="flex items-center gap-3">
                                     <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-                                    <span class="text-white font-medium">AI Intervention Models</span>
+                                    <span class="text-white font-medium">Non-Invasive Vagus Nerve Stimulation</span>
                                 </div>
-                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">Research</span>
+                                <span class="text-xs text-mustard-400 bg-mustard-500/10 px-2 py-1 rounded">Roadmap</span>
                             </div>
                         </div>
-                        
+
                         <div class="mt-6 pt-6 border-t border-white/10 relative z-10">
-                            <p class="text-sm text-slate-400">Collaborating with leading institutions worldwide to advance the science of human resilience.</p>
+                            <p class="text-sm text-slate-400">Backed by a non-dilutive KSUM Idea Grant. Stress-detection pipelines validated on established public physiological datasets; research presented at GLEX 2025, the NASA Human Research Program community, and ELGRA.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Blog Section -->
     <section id="blogs" class="py-24 relative bg-black">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 reveal">
                 <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4">Latest Insights</h2>
-                <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">From Our Blog</h3>
-                <p class="text-slate-300 text-lg">Explore our latest research findings, industry insights, and thoughts.</p>
+                <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">From the Research Desk</h3>
+                <p class="text-slate-300 text-lg">Field notes on decision-making under pressure, physiological sensing, and human performance in extreme environments.</p>
             </div>
-
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
                 <!-- Blog Post 1: April 15, 2026 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 100ms;">
@@ -544,14 +510,13 @@
                             <span class="text-xs text-slate-500">April 15, 2026</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Engineering Biology for Space Health</h4>
-                        <p class="text-slate-400 text-sm mb-4">The Future of Self-Sustaining Space Missions.</p>
+                        <p class="text-slate-400 text-sm mb-4">The future of self-sustaining space missions.</p>
                         <a href="blog/space.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Blog Post 2: Jan 20, 2026 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 100ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
@@ -564,14 +529,13 @@
                             <span class="text-xs text-slate-500">Jan 20, 2026</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Training the Brain for Space</h4>
-                        <p class="text-slate-400 text-sm mb-4">Neuroplasticity as a Mission-Critical Skill.</p>
+                        <p class="text-slate-400 text-sm mb-4">Neuroplasticity as a mission-critical skill.</p>
                         <a href="blog/train.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Blog Post 3: Jan 10, 2026 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
@@ -584,14 +548,13 @@
                             <span class="text-xs text-slate-500">Jan 10, 2026</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Neuroadaptive Training in Extreme Environments</h4>
-                        <p class="text-slate-400 text-sm mb-4">Cognitive Stability Under Stress.</p>
+                        <p class="text-slate-400 text-sm mb-4">Cognitive stability under stress.</p>
                         <a href="blog/personalized-interactions.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Blog Post 4: May 28, 2025 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 200ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-dark flex items-center justify-center relative overflow-hidden">
@@ -604,14 +567,13 @@
                             <span class="text-xs text-slate-500">May 28, 2025</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">GLEX 2025</h4>
-                        <p class="text-slate-400 text-sm mb-4">GLEX 2025 Showcasing the Neuroadaptive Efficiency Paradigm.</p>
+                        <p class="text-slate-400 text-sm mb-4">Presenting the neuroadaptive efficiency paradigm on a global stage.</p>
                         <a href="blog/GLEX.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Blog Post 5: March 15, 2025 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal">
                     <div class="h-48 bg-gradient-to-br from-kk-dark to-kk-blue flex items-center justify-center relative overflow-hidden">
@@ -624,14 +586,13 @@
                             <span class="text-xs text-slate-500">March 15, 2025</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Biometric Monitoring in Extreme Environments</h4>
-                        <p class="text-slate-400 text-sm mb-4">New advances in real-time physiological monitoring for astronaut health management.</p>
+                        <p class="text-slate-400 text-sm mb-4">Advances in real-time physiological monitoring for astronaut health management.</p>
                         <a href="blog/biometric.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Blog Post 6: March 10, 2025 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal" style="transition-delay: 100ms;">
                     <div class="h-48 bg-gradient-to-br from-kk-blue to-kk-light flex items-center justify-center relative overflow-hidden">
@@ -644,14 +605,13 @@
                             <span class="text-xs text-slate-500">March 10, 2025</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Predictive Analytics for Crew Performance</h4>
-                        <p class="text-slate-400 text-sm mb-4">Machine learning models that anticipate cognitive load before mission-critical decisions.</p>
+                        <p class="text-slate-400 text-sm mb-4">Machine-learning models that anticipate cognitive load before mission-critical decisions.</p>
                         <a href="blog/ML.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Hidden Blog Posts (OLDER) - 7, 8, 9 -->
                 <!-- Blog Post 7: Jan 30, 2025 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 100ms; display: none;">
@@ -664,15 +624,14 @@
                             <span class="text-slate-600">•</span>
                             <span class="text-xs text-slate-500">Jan 30, 2025</span>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">The Future of Neuroeconomics Intervention in Space Missions</h4>
-                        <p class="text-slate-400 text-sm mb-4">Advancing Neuroeconomic Decision Support for Long-Duration Spaceflight.</p>
+                        <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">The Future of Neuroeconomic Intervention in Space Missions</h4>
+                        <p class="text-slate-400 text-sm mb-4">Advancing neuroeconomic decision support for long-duration spaceflight.</p>
                         <a href="blog/nasahrp.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Blog Post 8: Jan 10, 2025 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 200ms; display: none;">
                     <div class="h-48 bg-gradient-to-br from-kk-light to-kk-dark flex items-center justify-center relative overflow-hidden">
@@ -687,12 +646,11 @@
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">Neuroplasticity Training for Space Adaptation</h4>
                         <p class="text-slate-400 text-sm mb-4">Cognitive training protocols to enhance neural adaptation in microgravity environments.</p>
                         <a href="blog/Cognitive-support.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
-
                 <!-- Blog Post 9: Sep 4, 2024 -->
                 <article class="glass-card rounded-2xl overflow-hidden blog-card reveal hidden-blog" style="transition-delay: 300ms; display: none;">
                     <div class="h-48 bg-gradient-to-br from-kk-light to-kk-blue flex items-center justify-center relative overflow-hidden">
@@ -705,15 +663,14 @@
                             <span class="text-xs text-slate-500">Sep 4, 2024</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-3 hover:text-mustard-400 transition-colors cursor-pointer">AI-Driven Emotional Support for Space Missions</h4>
-                        <p class="text-slate-400 text-sm mb-4">How machine learning algorithms can detect loneliness and provide timely interventions.</p>
+                        <p class="text-slate-400 text-sm mb-4">How machine-learning algorithms can detect loneliness and provide timely interventions.</p>
                         <a href="blog/elgra.html" class="text-mustard-400 text-sm font-medium hover:text-mustard-300 transition-colors flex items-center gap-1">
-                            Read More 
+                            Read More
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
                     </div>
                 </article>
             </div>
-
             <div class="text-center mt-12 reveal">
                 <button id="view-all-btn" onclick="toggleBlogs()" class="inline-flex items-center gap-2 px-6 py-3 border border-mustard-500/50 hover:border-mustard-400 text-mustard-400 font-medium rounded-lg transition-all hover:bg-mustard-500/10 cursor-pointer">
                     <span id="btn-text">View All Articles</span>
@@ -724,15 +681,14 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="py-24 relative overflow-hidden bg-black">
         <div class="absolute inset-0 bg-gradient-to-t from-kk-blue/10 to-transparent"></div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 class="text-sm font-semibold text-mustard-400 tracking-widest uppercase mb-4 reveal">Get in Touch</h2>
-            <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">Build Resilience with Us</h3>
-            <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto reveal">Partner with KinKinetics to develop the next generation of neuroadaptive resilience tools—for Earth and space.</p>
-            
+            <h3 class="text-4xl md:text-6xl font-bold text-white mb-6 reveal">From Working Prototype to Deployed System</h3>
+            <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto reveal">We work with research labs, clinical teams and investors who want to take decision-stability technology from prototype to the field. If that's you, let's talk.</p>
+
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
                 <a href="mailto:info@kinkinetics.com" class="w-full sm:w-auto px-8 py-4 bg-mustard-500 hover:bg-mustard-400 text-kk-blue font-bold rounded-lg transition-all shadow-lg shadow-mustard-500/25">
                     Contact Us
@@ -743,7 +699,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="border-t border-white/5 bg-black py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -755,19 +710,19 @@
                         </div>
                         <span class="text-xl font-bold text-white font-display">KinKinetics</span>
                     </div>
-                    <p class="text-slate-400 text-sm max-w-sm">Pioneering neuroadaptive systems for human resilience in space, healthcare, and extreme environments.</p>
+                    <p class="text-slate-400 text-sm max-w-sm">A closed-loop neuroadaptive wearable that keeps decisions stable under pressure — in healthcare, high-stakes work, and extreme environments.</p>
                 </div>
-                
+
                 <div>
                     <h4 class="text-white font-semibold mb-4">Platform</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#about" class="text-slate-400 hover:text-mustard-400 transition-colors">About</a></li>
-                        <li><a href="#services" class="text-slate-400 hover:text-mustard-400 transition-colors">Services</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-mustard-400 transition-colors">System</a></li>
                         <li><a href="#research" class="text-slate-400 hover:text-mustard-400 transition-colors">Research</a></li>
                         <li><a href="#blogs" class="text-slate-400 hover:text-mustard-400 transition-colors">Blog</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h4 class="text-white font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2 text-sm">
@@ -777,7 +732,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                 <div class="text-slate-500 text-sm">© 2026 KinKinetics. All rights reserved.</div>
                 <div class="flex gap-6 text-sm">
@@ -787,7 +742,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Scroll reveal animation
         const observerOptions = {
@@ -795,7 +749,6 @@
             rootMargin: '0px',
             threshold: 0.1
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -804,18 +757,16 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.reveal').forEach(el => {
             observer.observe(el);
         });
-
         // Toggle blog visibility
         function toggleBlogs() {
             const hiddenBlogs = document.querySelectorAll('.hidden-blog');
             const btnText = document.getElementById('btn-text');
             const btnIcon = document.getElementById('btn-icon');
             const isHidden = hiddenBlogs[0].style.display === 'none';
-            
+
             hiddenBlogs.forEach((blog) => {
                 if (isHidden) {
                     blog.style.display = 'block';
@@ -826,7 +777,7 @@
                     blog.classList.remove('revealed');
                 }
             });
-            
+
             if (isHidden) {
                 btnText.textContent = 'Show Less';
                 btnIcon.style.transform = 'rotate(180deg)';
